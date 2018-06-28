@@ -1,5 +1,5 @@
 //
-//  WeatherPresenter.h
+//  WeatherViewModel.h
 //  TestWeatherApplication
 //
 //  Created by am10 on 2018/06/28.
@@ -10,7 +10,7 @@
 #import "WeatherViewController.h"
 #import "WeatherModel.h"
 
-@interface WeatherPresenter : NSObject
+@interface WeatherViewModel : NSObject
 
 @property (nonatomic) WeatherModel *model;
 

@@ -11,7 +11,7 @@
 #import "AreaFilterViewController.h"
 #import "WeatherViewController.h"
 #import "PrefectureListTableViewCell.h"
-#import "PrefectureListPresenter.h"
+#import "PrefectureListViewModel.h"
 #import "PrefectureListView.h"
 
 //=======================================================
@@ -26,7 +26,7 @@ PrefectureListTableViewCellDelegate,
 AreaFilterViewControllerDelegate,
 PrefectureListViewDelegate>
 
-@property (nonatomic) PrefectureListPresenter *presenter;
+@property (nonatomic) PrefectureListViewModel *viewModel;
 
 @property (nonatomic) PrefectureListView *prefectureListView;
 
@@ -47,12 +47,12 @@ PrefectureListViewDelegate>
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.presenter = [PrefectureListPresenter new];
-    self.presenter.viewController = self;
+    self.viewModel = [PrefectureListViewModel new];
+    self.viewModel.viewController = self;
     
     [self setupTableView];
 
-    [self.presenter setupData];
+    [self.viewModel setupData];
 }
 
 
@@ -73,7 +73,7 @@ PrefectureListViewDelegate>
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return [self.presenter tableViewNumberOfRowsInSection:section];
+    return [self.viewModel tableViewNumberOfRowsInSection:section];
 }
 
 
@@ -90,7 +90,7 @@ PrefectureListViewDelegate>
     PrefectureListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName
                                                                         forIndexPath:indexPath];
     cell.delegate = self;
-    [cell displayInfo:[self.presenter tableViewCellForRowAtIndexPath:indexPath]];
+    [cell displayInfo:[self.viewModel tableViewCellForRowAtIndexPath:indexPath]];
     
     return cell;
 }
@@ -105,7 +105,7 @@ PrefectureListViewDelegate>
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.presenter didTablebleViewSelectRowAtIndexPath:indexPath];
+    [self.viewModel didTablebleViewSelectRowAtIndexPath:indexPath];
 }
 
 
@@ -132,7 +132,7 @@ PrefectureListViewDelegate>
         return;
     }
     
-    [self.presenter didTapFavoriteCheckButtonAtIndexPath:indexPath];
+    [self.viewModel didTapFavoriteCheckButtonAtIndexPath:indexPath];
 }
 
 
@@ -146,7 +146,7 @@ PrefectureListViewDelegate>
 - (void)areaFilterViewController:(AreaFilterViewController *)areaFilterViewController
       didChangeSelectedAreaTypes:(NSArray <NSNumber *> *)selectedAreaTypes
 {
-    [self.presenter didChangeSelectedAreaTypes:selectedAreaTypes];
+    [self.viewModel didChangeSelectedAreaTypes:selectedAreaTypes];
 }
 
 
@@ -160,7 +160,7 @@ PrefectureListViewDelegate>
 - (void)prefectureListView:(PrefectureListView *)prefectureListView
  didTapFavoriteCheckButton:(UIButton *)button
 {
-    [self.presenter didTapFavoriteCheckButton];
+    [self.viewModel didTapFavoriteCheckButton];
 }
 
 
@@ -222,7 +222,7 @@ PrefectureListViewDelegate>
 - (void)showAreaFilterViewControllerWithButton:(UIButton *)button
 {
     AreaFilterViewController *vc = [AreaFilterViewController new];
-    [vc setupPresenterWithModel:[self.presenter createAreaFilterModel]];
+    [vc setupViewModelWithModel:[self.viewModel createAreaFilterModel]];
     vc.delegate = self;
     vc.modalPresentationStyle = UIModalPresentationPopover;
     vc.preferredContentSize = vc.view.frame.size;
@@ -244,7 +244,7 @@ PrefectureListViewDelegate>
 - (void)showWeatherViewControllerWithModel:(WeatherModel *)model
 {
     WeatherViewController *vc = [WeatherViewController new];
-    [vc setupPresenterWithModel:model];
+    [vc setupViewModelWithModel:model];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

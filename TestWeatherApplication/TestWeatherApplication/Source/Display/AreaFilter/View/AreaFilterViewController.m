@@ -9,7 +9,7 @@
 #import "AreaFilterViewController.h"
 #import "AreaFilterTableViewCell.h"
 #import "AreaFilterView.h"
-#import "AreaFilterPresenter.h"
+#import "AreaFilterViewModel.h"
 
 //=======================================================
 // 地方で絞込み画面
@@ -19,22 +19,22 @@
 
 @property (nonatomic) AreaFilterView *areaFilterView;
 
-@property (nonatomic) AreaFilterPresenter *presenter;
+@property (nonatomic) AreaFilterViewModel *viewModel;
 
 @end
 
 @implementation AreaFilterViewController
 
 /**
- プレゼンターの設定
+ ViewModelの設定
  
  @param model モデル
  */
-- (void)setupPresenterWithModel:(AreaFilterModel *)model
+- (void)setupViewModelWithModel:(AreaFilterModel *)model
 {
-    self.presenter = [AreaFilterPresenter new];
-    self.presenter.model = model;
-    self.presenter.viewController = self;
+    self.viewModel = [AreaFilterViewModel new];
+    self.viewModel.model = model;
+    self.viewModel.viewController = self;
 }
 
 #pragma mark - Override
@@ -53,7 +53,7 @@
     
     [self setupTableView];
     
-    [self.presenter setupData];
+    [self.viewModel setupData];
 }
 
 
@@ -74,7 +74,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return [self.presenter tableViewNumberOfRowsInSection:section];
+    return [self.viewModel tableViewNumberOfRowsInSection:section];
 }
 
 
@@ -90,7 +90,7 @@
     NSString *cellName = NSStringFromClass([AreaFilterTableViewCell class]);
     AreaFilterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName
                                                                         forIndexPath:indexPath];
-    [cell displayInfo:[self.presenter tableViewCellForRowAtIndexPath:indexPath]];
+    [cell displayInfo:[self.viewModel tableViewCellForRowAtIndexPath:indexPath]];
     
     return cell;
 }
@@ -105,7 +105,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.presenter didTablebleViewSelectRowAtIndexPath:indexPath];
+    [self.viewModel didTablebleViewSelectRowAtIndexPath:indexPath];
 }
 
 
@@ -119,7 +119,7 @@
 - (void)areaFilterView:(AreaFilterView *)areaFilterView
  didTapAllSelectButton:(UIButton *)button
 {
-    [self.presenter didTapAllSelectButton];
+    [self.viewModel didTapAllSelectButton];
 }
 
 

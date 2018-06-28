@@ -8,7 +8,7 @@
 
 #import "WeatherViewController.h"
 #import "WeatherView.h"
-#import "WeatherPresenter.h"
+#import "WeatherViewModel.h"
 
 //=======================================================
 // 天気画面
@@ -18,22 +18,22 @@
 
 @property (nonatomic) WeatherView *weatherView;
 
-@property (nonatomic) WeatherPresenter *presenter;
+@property (nonatomic) WeatherViewModel *viewModel;
 
 @end
 
 @implementation WeatherViewController
 
 /**
- プレゼンターの設定
+ ViewModelの設定
 
  @param model モデル
  */
-- (void)setupPresenterWithModel:(WeatherModel *)model
+- (void)setupViewModelWithModel:(WeatherModel *)model
 {
-    self.presenter = [WeatherPresenter new];
-    self.presenter.model = model;
-    self.presenter.viewController = self;
+    self.viewModel = [WeatherViewModel new];
+    self.viewModel.model = model;
+    self.viewModel.viewController = self;
 }
 
 
@@ -51,7 +51,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setupNavigationBar];
     
-    [self.presenter setupData];
+    [self.viewModel setupData];
 }
 
 
@@ -83,7 +83,7 @@
  */
 - (void)tappedRefreshButton:(UIBarButtonItem *)button
 {
-    [self.presenter didTapRefreshButton];
+    [self.viewModel didTapRefreshButton];
 }
 
 

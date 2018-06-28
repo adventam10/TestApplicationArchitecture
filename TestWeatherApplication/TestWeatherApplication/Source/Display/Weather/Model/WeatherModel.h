@@ -16,17 +16,4 @@
 
 @property (nonatomic) CityDataList *prefectureInfo;
 
-#pragma mark - Request
-/**
- 天気情報取得処理
- 
- @param cityId 対象都道府県ID
- @param success 通信成功時の処理
- @param failure 通信失敗時の処理
- @return タスク
- */
-- (NSURLSessionDataTask *)requestWeatherWithCityId:(NSString *)cityId
-                                           success:(void (^)(void))success
-                                           failure:(void (^)(NSString *message, NSError *error))failure;
-
 @end

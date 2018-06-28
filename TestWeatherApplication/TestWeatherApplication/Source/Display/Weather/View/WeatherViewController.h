@@ -12,11 +12,11 @@
 @interface WeatherViewController : UIViewController
 
 /**
- プレゼンターの設定
+ ViewModelの設定
  
  @param model モデル
  */
-- (void)setupPresenterWithModel:(WeatherModel *)model;
+- (void)setupViewModelWithModel:(WeatherModel *)model;
 
 #pragma mark - Display Data
 /**

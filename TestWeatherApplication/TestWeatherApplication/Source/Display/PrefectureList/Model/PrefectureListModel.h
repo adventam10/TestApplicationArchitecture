@@ -41,18 +41,6 @@
  */
 - (void)didUpdateIsFavoriteButtonCheckOfPrefectureListModel:(PrefectureListModel *)model;
 
-/**
- 天気情報の取得通信終了時に呼ばれる
- 
- @param model 対象Model
- @param weatherModel 天気画面のモデル
- @param errorMessage エラーメッセージ
- @param isSuccess 通信成功フラグ
- */
-- (void)prefectureListModel:(PrefectureListModel *)model
-didCompleteWeatherRequestWithModel:(WeatherModel *)weatherModel
-               errorMessage:(NSString *)errorMessage
-                  isSuccess:(BOOL)isSuccess;
 @end
 
 @interface PrefectureListModel : NSObject
@@ -65,32 +53,5 @@ didCompleteWeatherRequestWithModel:(WeatherModel *)weatherModel
 @property (nonatomic) NSArray <NSString *> *favoriteCityIds;
 
 @property (nonatomic) BOOL isFavoriteButtonCheck;
-
-/**
- テーブル表示用データの設定を行う
- */
-- (void)setupTableDataList;
-
-/**
- お気に入りの登録・削除処理
- 
- @param cityId 対象cityId
- */
-- (void)changedFavoriteCityId:(NSString *)cityId;
-
-/**
- 対象の都道府県がお気に入りか判定する
- 
- @param cityId 対象cityId
- @return お気に入りフラグ
- */
-- (BOOL)isFavoriteWithCityId:(NSString *)cityId;
-
-/**
- 天気情報の取得処理
-
- @param prefectureData 対象都道府県データ
- */
-- (void)requestWeatherWithPrefectureData:(CityDataList *)prefectureData;
 
 @end

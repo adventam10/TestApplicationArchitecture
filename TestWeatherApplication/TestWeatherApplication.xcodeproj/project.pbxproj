@@ -52,11 +52,11 @@
 		0E7E1E7320E4C69A005EDFB6 /* AreaFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E5220E4C69A005EDFB6 /* AreaFilterView.m */; };
 		0E7E1E7420E4C69A005EDFB6 /* AreaFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1E5320E4C69A005EDFB6 /* AreaFilterView.xib */; };
 		0E7E1E7520E4C69A005EDFB6 /* AreaFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E5520E4C69A005EDFB6 /* AreaFilterViewController.m */; };
-		0E7E1E7820E4C6CF005EDFB6 /* PrefectureListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E7720E4C6CF005EDFB6 /* PrefectureListPresenter.m */; };
-		0E7E1E7B20E4C6E0005EDFB6 /* AreaFilterPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E7A20E4C6E0005EDFB6 /* AreaFilterPresenter.m */; };
-		0E7E1E7E20E4C6F1005EDFB6 /* WeatherPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E7D20E4C6F1005EDFB6 /* WeatherPresenter.m */; };
 		0E7E1E8120E4D8E2005EDFB6 /* PrefectureListCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E8020E4D8E2005EDFB6 /* PrefectureListCellModel.m */; };
 		0E7E1E8420E4E7F2005EDFB6 /* AreaFilterCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E8320E4E7F2005EDFB6 /* AreaFilterCellModel.m */; };
+		0E7E1E8820E51CCE005EDFB6 /* PrefectureListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E8720E51CCE005EDFB6 /* PrefectureListViewModel.m */; };
+		0E7E1E8C20E51CEA005EDFB6 /* AreaFilterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E8B20E51CEA005EDFB6 /* AreaFilterViewModel.m */; };
+		0E7E1E9020E51D10005EDFB6 /* WeatherViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E8F20E51D10005EDFB6 /* WeatherViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,16 +162,16 @@
 		0E7E1E5320E4C69A005EDFB6 /* AreaFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaFilterView.xib; sourceTree = "<group>"; };
 		0E7E1E5420E4C69A005EDFB6 /* AreaFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaFilterViewController.h; sourceTree = "<group>"; };
 		0E7E1E5520E4C69A005EDFB6 /* AreaFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaFilterViewController.m; sourceTree = "<group>"; };
-		0E7E1E7620E4C6CF005EDFB6 /* PrefectureListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListPresenter.h; sourceTree = "<group>"; };
-		0E7E1E7720E4C6CF005EDFB6 /* PrefectureListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListPresenter.m; sourceTree = "<group>"; };
-		0E7E1E7920E4C6E0005EDFB6 /* AreaFilterPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterPresenter.h; sourceTree = "<group>"; };
-		0E7E1E7A20E4C6E0005EDFB6 /* AreaFilterPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterPresenter.m; sourceTree = "<group>"; };
-		0E7E1E7C20E4C6F1005EDFB6 /* WeatherPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherPresenter.h; sourceTree = "<group>"; };
-		0E7E1E7D20E4C6F1005EDFB6 /* WeatherPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherPresenter.m; sourceTree = "<group>"; };
 		0E7E1E7F20E4D8E2005EDFB6 /* PrefectureListCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListCellModel.h; sourceTree = "<group>"; };
 		0E7E1E8020E4D8E2005EDFB6 /* PrefectureListCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListCellModel.m; sourceTree = "<group>"; };
 		0E7E1E8220E4E7F2005EDFB6 /* AreaFilterCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterCellModel.h; sourceTree = "<group>"; };
 		0E7E1E8320E4E7F2005EDFB6 /* AreaFilterCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterCellModel.m; sourceTree = "<group>"; };
+		0E7E1E8620E51CCE005EDFB6 /* PrefectureListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListViewModel.h; sourceTree = "<group>"; };
+		0E7E1E8720E51CCE005EDFB6 /* PrefectureListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListViewModel.m; sourceTree = "<group>"; };
+		0E7E1E8A20E51CEA005EDFB6 /* AreaFilterViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterViewModel.h; sourceTree = "<group>"; };
+		0E7E1E8B20E51CEA005EDFB6 /* AreaFilterViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterViewModel.m; sourceTree = "<group>"; };
+		0E7E1E8E20E51D10005EDFB6 /* WeatherViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewModel.h; sourceTree = "<group>"; };
+		0E7E1E8F20E51D10005EDFB6 /* WeatherViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,7 +329,7 @@
 			children = (
 				0E7E1E0D20E4C699005EDFB6 /* Model */,
 				0E7E1E1720E4C699005EDFB6 /* View */,
-				0E7E1E1620E4C699005EDFB6 /* Presenter */,
+				0E7E1E8520E51CAE005EDFB6 /* ViewModel */,
 			);
 			path = PrefectureList;
 			sourceTree = "<group>";
@@ -365,15 +365,6 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
-		0E7E1E1620E4C699005EDFB6 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0E7E1E7620E4C6CF005EDFB6 /* PrefectureListPresenter.h */,
-				0E7E1E7720E4C6CF005EDFB6 /* PrefectureListPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		0E7E1E1720E4C699005EDFB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,7 +385,7 @@
 			children = (
 				0E7E1E2120E4C699005EDFB6 /* Model */,
 				0E7E1E3920E4C69A005EDFB6 /* View */,
-				0E7E1E3820E4C69A005EDFB6 /* Presenter */,
+				0E7E1E8D20E51CFA005EDFB6 /* ViewModel */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -442,15 +433,6 @@
 			path = Property;
 			sourceTree = "<group>";
 		};
-		0E7E1E3820E4C69A005EDFB6 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0E7E1E7C20E4C6F1005EDFB6 /* WeatherPresenter.h */,
-				0E7E1E7D20E4C6F1005EDFB6 /* WeatherPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		0E7E1E3920E4C69A005EDFB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,7 +466,7 @@
 			children = (
 				0E7E1E4920E4C69A005EDFB6 /* Model */,
 				0E7E1E4D20E4C69A005EDFB6 /* View */,
-				0E7E1E4C20E4C69A005EDFB6 /* Presenter */,
+				0E7E1E8920E51CD9005EDFB6 /* ViewModel */,
 			);
 			path = AreaFilter;
 			sourceTree = "<group>";
@@ -500,15 +482,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0E7E1E4C20E4C69A005EDFB6 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0E7E1E7920E4C6E0005EDFB6 /* AreaFilterPresenter.h */,
-				0E7E1E7A20E4C6E0005EDFB6 /* AreaFilterPresenter.m */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		0E7E1E4D20E4C69A005EDFB6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +495,33 @@
 				0E7E1E5520E4C69A005EDFB6 /* AreaFilterViewController.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0E7E1E8520E51CAE005EDFB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1E8620E51CCE005EDFB6 /* PrefectureListViewModel.h */,
+				0E7E1E8720E51CCE005EDFB6 /* PrefectureListViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0E7E1E8920E51CD9005EDFB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1E8A20E51CEA005EDFB6 /* AreaFilterViewModel.h */,
+				0E7E1E8B20E51CEA005EDFB6 /* AreaFilterViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0E7E1E8D20E51CFA005EDFB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1E8E20E51D10005EDFB6 /* WeatherViewModel.h */,
+				0E7E1E8F20E51D10005EDFB6 /* WeatherViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -669,10 +669,10 @@
 				0E7E1E6D20E4C69A005EDFB6 /* WeatherView.m in Sources */,
 				0E7E1E6F20E4C69A005EDFB6 /* WeatherViewController.m in Sources */,
 				0E7E1E6320E4C69A005EDFB6 /* WeatherResponseLocation.m in Sources */,
+				0E7E1E8820E51CCE005EDFB6 /* PrefectureListViewModel.m in Sources */,
 				0E7E1E5D20E4C69A005EDFB6 /* PrefectureListViewController.m in Sources */,
 				0E7E1E6220E4C69A005EDFB6 /* WeatherResponseImage.m in Sources */,
 				0E7E1E5720E4C69A005EDFB6 /* CityDataList.m in Sources */,
-				0E7E1E7E20E4C6F1005EDFB6 /* WeatherPresenter.m in Sources */,
 				0E1EF70620DF5DED00703E25 /* main.m in Sources */,
 				0E7E1D7D20E12943005EDFB6 /* SVRadialGradientLayer.m in Sources */,
 				0E7E1E5620E4C69A005EDFB6 /* CityData.m in Sources */,
@@ -682,11 +682,11 @@
 				0E7E1E6620E4C69A005EDFB6 /* WeatherResponseTemperature.m in Sources */,
 				0E7E1E5F20E4C69A005EDFB6 /* WeatherResponseCopyright.m in Sources */,
 				0E1EF6F820DF5DE500703E25 /* AppDelegate.m in Sources */,
-				0E7E1E7B20E4C6E0005EDFB6 /* AreaFilterPresenter.m in Sources */,
 				0E7E1E6120E4C69A005EDFB6 /* WeatherResponseForecast.m in Sources */,
 				0E7E1E8120E4D8E2005EDFB6 /* PrefectureListCellModel.m in Sources */,
 				0E7E1E7520E4C69A005EDFB6 /* AreaFilterViewController.m in Sources */,
 				0E7E1D7C20E12943005EDFB6 /* SVProgressHUD.m in Sources */,
+				0E7E1E8C20E51CEA005EDFB6 /* AreaFilterViewModel.m in Sources */,
 				0E7E1D7920E12943005EDFB6 /* SVIndefiniteAnimatedView.m in Sources */,
 				0E7E1E6920E4C69A005EDFB6 /* WeatherInfoLargeView.m in Sources */,
 				0E7E1E7120E4C69A005EDFB6 /* AreaFilterTableViewCell.m in Sources */,
@@ -695,8 +695,8 @@
 				0E7E1E6B20E4C69A005EDFB6 /* WeatherInfoSmallView.m in Sources */,
 				0E7E1E7020E4C69A005EDFB6 /* AreaFilterModel.m in Sources */,
 				0E7E1E5E20E4C69A005EDFB6 /* WeatherModel.m in Sources */,
+				0E7E1E9020E51D10005EDFB6 /* WeatherViewModel.m in Sources */,
 				0E7E1E7320E4C69A005EDFB6 /* AreaFilterView.m in Sources */,
-				0E7E1E7820E4C6CF005EDFB6 /* PrefectureListPresenter.m in Sources */,
 				0E7E1E6820E4C69A005EDFB6 /* WeatherInfoBaseView.m in Sources */,
 				0E7E1E5820E4C69A005EDFB6 /* PrefectureListModel.m in Sources */,
 			);

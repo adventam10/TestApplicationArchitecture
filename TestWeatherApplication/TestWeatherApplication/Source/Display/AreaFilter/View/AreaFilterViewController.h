@@ -28,11 +28,11 @@
 @property (nonatomic, weak) id<AreaFilterViewControllerDelegate> delegate;
 
 /**
- プレゼンターの設定
+ ViewModelの設定
  
  @param model モデル
  */
-- (void)setupPresenterWithModel:(AreaFilterModel *)model;
+- (void)setupViewModelWithModel:(AreaFilterModel *)model;
 
 #pragma mark - Display Data
 /**

@@ -1,5 +1,5 @@
 //
-//  PrefectureListPresenter.h
+//  PrefectureListViewModel.h
 //  TestWeatherApplication
 //
 //  Created by am10 on 2018/06/28.
@@ -12,7 +12,7 @@
 #import "PrefectureListCellModel.h"
 #import "AreaFilterModel.h"
 
-@interface PrefectureListPresenter : NSObject
+@interface PrefectureListViewModel : NSObject
 
 @property (nonatomic, weak) PrefectureListViewController *viewController;
 
@@ -43,7 +43,7 @@
 
 /**
  お気に入りボタン押した時の処理
-
+ 
  @param indexPath 対象インデックスパス
  */
 - (void)didTapFavoriteCheckButtonAtIndexPath:(NSIndexPath *)indexPath;
@@ -67,7 +67,7 @@
 #pragma mark - Create Data
 /**
  地方絞込み画面のモデル作成
-
+ 
  @return 地方絞込み画面のモデル
  */
 - (AreaFilterModel *)createAreaFilterModel;

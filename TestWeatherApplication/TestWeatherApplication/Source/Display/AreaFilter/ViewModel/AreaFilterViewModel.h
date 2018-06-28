@@ -1,5 +1,5 @@
 //
-//  AreaFilterPresenter.h
+//  AreaFilterViewModel.h
 //  TestWeatherApplication
 //
 //  Created by am10 on 2018/06/28.
@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "AreaFilterModel.h"
 #import "AreaFilterViewController.h"
 #import "AreaFilterCellModel.h"
 
-@interface AreaFilterPresenter : NSObject
+@interface AreaFilterViewModel : NSObject
 
 @property (nonatomic) AreaFilterModel *model;
 
