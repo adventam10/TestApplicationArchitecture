@@ -10,4 +10,8 @@
 
 @interface AreaFilterTableViewCell : UITableViewCell
 
+@property (nonatomic) BOOL isCheck;
+
+@property (nonatomic) NSString *title;
+
 @end

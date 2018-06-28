@@ -91,6 +91,8 @@
 		0E7E1D9520E135EA005EDFB6 /* AreaFilterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterTableViewCell.h; sourceTree = "<group>"; };
 		0E7E1D9620E135EA005EDFB6 /* AreaFilterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterTableViewCell.m; sourceTree = "<group>"; };
 		0E7E1D9720E135EA005EDFB6 /* AreaFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaFilterTableViewCell.xib; sourceTree = "<group>"; };
+		0E7E1D9B20E29E9D005EDFB6 /* NetworkKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkKey.h; sourceTree = "<group>"; };
+		0E7E1D9C20E2A000005EDFB6 /* CommonKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKey.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		0E7E1D6620E12943005EDFB6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0E7E1D9A20E29E85005EDFB6 /* Common */,
 				0E7E1D6720E12943005EDFB6 /* Display */,
 				0E7E1D6B20E12943005EDFB6 /* Framework */,
 			);
@@ -283,6 +286,15 @@
 				0E7E1D9720E135EA005EDFB6 /* AreaFilterTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0E7E1D9A20E29E85005EDFB6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1D9B20E29E9D005EDFB6 /* NetworkKey.h */,
+				0E7E1D9C20E2A000005EDFB6 /* CommonKey.h */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

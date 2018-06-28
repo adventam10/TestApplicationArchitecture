@@ -12,4 +12,6 @@
 
 @property (nonatomic) NSDictionary *responseData;
 
+@property (nonatomic) NSDictionary *prefectureInfo;
+
 @end

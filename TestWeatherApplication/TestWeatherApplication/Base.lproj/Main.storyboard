@@ -16,6 +16,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x2v-Ym-k9W">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.19711178541183472" green="0.31195196509361267" blue="0.77186310291290283" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cX9-St-hf4"/>
@@ -33,11 +38,12 @@
                         <barButtonItem key="backBarButtonItem" title="戻る" id="IO5-YE-fQY"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="9Rd-rr-z6x" kind="show" id="36s-rr-4cg"/>
+                        <segue destination="9Rd-rr-z6x" kind="show" identifier="showWeatherSeque" id="36s-rr-4cg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-965" y="1204"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="QAR-3t-G1v">

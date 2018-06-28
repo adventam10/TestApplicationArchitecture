@@ -8,20 +8,41 @@
 
 #import "AreaFilterTableViewCell.h"
 
+//=======================================================
+// 地方で絞込みセル
+//=======================================================
+
+@interface AreaFilterTableViewCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *checkImageView;
+@property (weak, nonatomic) IBOutlet UILabel *areaLabel;
+
+@end
+
 @implementation AreaFilterTableViewCell
 
-- (void)awakeFromNib
+#pragma mark - Setter
+/**
+ 地方のチェック状態の設定を行う
+ 
+ @param isCheck 都道府県情報
+ */
+- (void)setIsCheck:(BOOL)isCheck
 {
-    [super awakeFromNib];
-    // Initialization code
+    _isCheck = isCheck;
+    self.checkImageView.highlighted = isCheck;
 }
 
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+/**
+ 地方ラベルの表示設定を行う
+ 
+ @param title 地方の文字列
+ */
+- (void)setTitle:(NSString *)title
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    _title = title;
+    self.areaLabel.text = title;
 }
 
 @end

@@ -8,6 +8,10 @@
 
 #import "PrefectureListTableViewCell.h"
 
+//=======================================================
+// 都道府県一覧セル
+//=======================================================
+
 @interface PrefectureListTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
@@ -17,20 +21,24 @@
 
 @implementation PrefectureListTableViewCell
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    // Initialization code
-}
+#pragma mark - Setter
+/**
+ 都道府県情報の表示設定を行う
 
-
+ @param prefectureInfo 都道府県情報
+ */
 - (void)setPrefectureInfo:(NSDictionary *)prefectureInfo
 {
     _prefectureInfo = prefectureInfo;
-    self.titleLabel.text = prefectureInfo[@"name"];
+    self.titleLabel.text = prefectureInfo[TWAName];
 }
 
 
+/**
+ お気に入りの表示設定を行う
+
+ @param isFavorite お気に入りフラグ
+ */
 - (void)setIsFavorite:(BOOL)isFavorite
 {
     _isFavorite = isFavorite;
@@ -38,6 +46,12 @@
 }
 
 
+#pragma mark - Button Action
+/**
+ お気に入りボタン押した時の処理
+
+ @param button 対象ボタン
+ */
 - (IBAction)tappedFavoriteButton:(UIButton *)button
 {
     if ([self.delegate respondsToSelector:@selector(prefectureListTableViewCell:didTapFavoriteButton:)]) {
