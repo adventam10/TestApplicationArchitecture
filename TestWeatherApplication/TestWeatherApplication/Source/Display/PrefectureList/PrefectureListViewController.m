@@ -32,8 +32,6 @@ AreaFilterViewControllerDelegate>
 @property (nonatomic) NSMutableArray <NSNumber *> *selectedAreaTypes;
 @property (nonatomic) NSArray <NSString *> *favoriteCityIds;
 
-@property (nonatomic) NSInteger activityCount;
-
 @end
 
 @implementation PrefectureListViewController
@@ -365,28 +363,6 @@ AreaFilterViewControllerDelegate>
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingAllowFragments error:nil];
     return dic;
-}
-
-
-/**
- 一覧情報を検索してIndexを返します。
- 
- @param list 対象一覧
- @param key 検索Key
- @param value 検索値
- @return 検索結果Index
- */
-- (NSInteger)foundListIndexWithList:(NSArray *)list
-                                key:(NSString *)key
-                              value:(NSString *)value
-{
-    if (list.count > 0) {
-        
-        NSInteger index = [[list valueForKey:key] indexOfObject:value];
-        return index;
-    }
-    
-    return NSNotFound;
 }
 
 
