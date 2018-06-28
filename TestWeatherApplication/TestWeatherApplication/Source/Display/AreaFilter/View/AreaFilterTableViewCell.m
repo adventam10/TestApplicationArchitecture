@@ -23,15 +23,13 @@
 
 /**
  表示処理
-
- @param area 地方名
- @param isCheck チェック状態
+ 
+ @param cellModel セルの表示情報
  */
-- (void)displayArea:(NSString *)area
-            isCheck:(BOOL)isCheck
+- (void)displayInfo:(AreaFilterCellModel *)cellModel
 {
-    self.areaLabel.text = area;
-    self.checkImageView.highlighted = isCheck;
+    self.areaLabel.text = cellModel.area;
+    self.checkImageView.highlighted = cellModel.isCheck;
 }
 
 @end

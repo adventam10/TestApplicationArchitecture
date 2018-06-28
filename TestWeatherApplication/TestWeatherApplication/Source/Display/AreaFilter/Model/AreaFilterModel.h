@@ -8,11 +8,37 @@
 
 #import <Foundation/Foundation.h>
 
+@class AreaFilterModel;
+@protocol AreaFilterModelDelegate<NSObject>
+
+/**
+ 選択地方一覧が更新された時に呼ばれる
+ 
+ @param model 対象Model
+ */
+- (void)didUpdateSelectedAreaTypesOfAreaFilterModel:(AreaFilterModel *)model;
+
+/**
+ 全選択フラグが更新された時に呼ばれる
+ 
+ @param model 対象Model
+ */
+- (void)didUpdateIsAllCheckOfAreaFilterModel:(AreaFilterModel *)model;
+
+
+@end
+
+
 @interface AreaFilterModel : NSObject
+
+@property (nonatomic, weak) id<AreaFilterModelDelegate> delegate;
 
 @property (nonatomic) NSMutableArray <NSNumber *> *selectedAreaTypes;
 
 @property (nonatomic) NSArray <NSNumber *> *tableDataList;
+
+@property (nonatomic) BOOL isAllCheck;
+
 
 #pragma mark - Status Check
 /**
@@ -20,7 +46,7 @@
  
  @return すべて選択のチェック状態
  */
-- (BOOL)isAllCheck;
+- (BOOL)checkIsAllCheck;
 
 /**
  対象の地方の選択状態を判定する

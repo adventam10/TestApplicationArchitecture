@@ -33,6 +33,8 @@
 #pragma mark - Setter
 /**
  選択済みデータの設定を行う
+ 
+ @param selectedAreaTypes 選択地方一覧
  */
 - (void)setSelectedAreaTypes:(NSMutableArray<NSNumber *> *)selectedAreaTypes
 {
@@ -40,15 +42,37 @@
         
         // 選択済みデータがある場合何もしない
         _selectedAreaTypes = selectedAreaTypes;
-        return;
+        
+    } else {
+        
+        // 選択済みデータがない場合全選択状態にする
+        _selectedAreaTypes = [NSMutableArray array];
+        for (NSNumber *num in self.tableDataList) {
+            
+            [self.selectedAreaTypes addObject:num];
+        }
     }
     
-    // 選択済みデータがない場合全選択状態にする
-    _selectedAreaTypes = [NSMutableArray array];
-    for (NSNumber *num in self.tableDataList) {
+    if ([self.delegate respondsToSelector:@selector(didUpdateSelectedAreaTypesOfAreaFilterModel:)]) {
         
-        [self.selectedAreaTypes addObject:num];
+        [self.delegate didUpdateSelectedAreaTypesOfAreaFilterModel:self];
     }
+}
+
+
+/**
+ 全選択の状態を設定する
+
+ @param isAllCheck 全選択フラグ
+ */
+- (void)setIsAllCheck:(BOOL)isAllCheck
+{
+    _isAllCheck = isAllCheck;
+    
+    if ([self.delegate respondsToSelector:@selector(didUpdateIsAllCheckOfAreaFilterModel:)]) {
+        
+        [self.delegate didUpdateIsAllCheckOfAreaFilterModel:self];
+    }    
 }
 
 
@@ -70,7 +94,7 @@
  
  @return すべて選択のチェック状態
  */
-- (BOOL)isAllCheck
+- (BOOL)checkIsAllCheck
 {
     if (self.selectedAreaTypes.count == 0) {
         
@@ -163,6 +187,11 @@
             [self.selectedAreaTypes addObject:num];
         }
     }
+    
+    if ([self.delegate respondsToSelector:@selector(didUpdateSelectedAreaTypesOfAreaFilterModel:)]) {
+        
+        [self.delegate didUpdateSelectedAreaTypesOfAreaFilterModel:self];
+    }
 }
 
 
@@ -181,6 +210,11 @@
     } else {
         
         [self.selectedAreaTypes addObject:num];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(didUpdateSelectedAreaTypesOfAreaFilterModel:)]) {
+        
+        [self.delegate didUpdateSelectedAreaTypesOfAreaFilterModel:self];
     }
 }
 

@@ -11,7 +11,7 @@
 #import "AreaFilterViewController.h"
 #import "WeatherViewController.h"
 #import "PrefectureListTableViewCell.h"
-#import "PrefectureListModel.h"
+#import "PrefectureListPresenter.h"
 #import "PrefectureListView.h"
 
 //=======================================================
@@ -26,7 +26,7 @@ PrefectureListTableViewCellDelegate,
 AreaFilterViewControllerDelegate,
 PrefectureListViewDelegate>
 
-@property (nonatomic) PrefectureListModel *model;
+@property (nonatomic) PrefectureListPresenter *presenter;
 
 @property (nonatomic) PrefectureListView *prefectureListView;
 
@@ -47,11 +47,12 @@ PrefectureListViewDelegate>
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.model = [PrefectureListModel new];
-    [self setupTableView];
-    [self.model setupTableDataList];
+    self.presenter = [PrefectureListPresenter new];
+    self.presenter.viewController = self;
     
-    [self.prefectureListView displayIsFavoriteCheck:self.model.isFavoriteButtonCheck];
+    [self setupTableView];
+
+    [self.presenter setupData];
 }
 
 
@@ -60,7 +61,6 @@ PrefectureListViewDelegate>
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 #pragma mark - UITableView DataSource
@@ -73,7 +73,7 @@ PrefectureListViewDelegate>
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return self.model.tableDataList.count;
+    return [self.presenter tableViewNumberOfRowsInSection:section];
 }
 
 
@@ -90,9 +90,7 @@ PrefectureListViewDelegate>
     PrefectureListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName
                                                                         forIndexPath:indexPath];
     cell.delegate = self;
-    CityDataList *prefectureInfo = self.model.tableDataList[indexPath.row];
-    [cell displayPrefectureInfo:prefectureInfo
-                     isFavorite:[self.model isFavoriteWithCityId:prefectureInfo.cityId]];
+    [cell displayInfo:[self.presenter tableViewCellForRowAtIndexPath:indexPath]];
     
     return cell;
 }
@@ -107,24 +105,7 @@ PrefectureListViewDelegate>
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [SVProgressHUD show];
-    CityDataList *prefectureInfo = self.model.tableDataList[indexPath.row];
-    WeatherModel *model = [WeatherModel new];
-    model.prefectureInfo = prefectureInfo;
-    __weak typeof(self) weakSelf = self;
-    [model requestWeatherWithCityId:prefectureInfo.cityId
-                           success:^()
-    {
-        [SVProgressHUD dismiss];
-        [weakSelf showWeatherViewControllerWithModel:model];
-    }
-                           failure:^(NSString *message, NSError *error)
-    {
-        [SVProgressHUD dismiss];
-        [weakSelf showAlertYesOnlyWithTitle:@""
-                                    message:message
-                                   yesBlock:nil];
-    }];
+    [self.presenter didTablebleViewSelectRowAtIndexPath:indexPath];
 }
 
 
@@ -151,10 +132,7 @@ PrefectureListViewDelegate>
         return;
     }
     
-    CityDataList *prefectureInfo = self.model.tableDataList[indexPath.row];
-    [self.model changedFavoriteCityId:prefectureInfo.cityId];
-    [self.model setupTableDataList];
-    [self.prefectureListView.tableView reloadData];
+    [self.presenter didTapFavoriteCheckButtonAtIndexPath:indexPath];
 }
 
 
@@ -168,9 +146,7 @@ PrefectureListViewDelegate>
 - (void)areaFilterViewController:(AreaFilterViewController *)areaFilterViewController
       didChangeSelectedAreaTypes:(NSArray <NSNumber *> *)selectedAreaTypes
 {
-    self.model.selectedAreaTypes = [selectedAreaTypes mutableCopy];
-    [self.model setupTableDataList];
-    [self.prefectureListView.tableView reloadData];
+    [self.presenter didChangeSelectedAreaTypes:selectedAreaTypes];
 }
 
 
@@ -184,10 +160,7 @@ PrefectureListViewDelegate>
 - (void)prefectureListView:(PrefectureListView *)prefectureListView
  didTapFavoriteCheckButton:(UIButton *)button
 {
-    self.model.isFavoriteButtonCheck = !self.model.isFavoriteButtonCheck;
-    [self.prefectureListView displayIsFavoriteCheck:self.model.isFavoriteButtonCheck];
-    [self.model setupTableDataList];
-    [self.prefectureListView.tableView reloadData];
+    [self.presenter didTapFavoriteCheckButton];
 }
 
 
@@ -219,6 +192,27 @@ PrefectureListViewDelegate>
 }
 
 
+#pragma mark - Display Data
+/**
+ テーブルの表示を更新する
+ */
+- (void)reloadTableView
+{
+    [self.prefectureListView.tableView reloadData];
+}
+
+
+/**
+ お気に入りのみ表示ボタンの表示設定
+ 
+ @param isFavoriteCheck お気に入りのみ表示フラグ
+ */
+- (void)displayIsFavoriteCheck:(BOOL)isFavoriteCheck
+{
+    [self.prefectureListView displayIsFavoriteCheck:isFavoriteCheck];
+}
+
+
 #pragma mark - Show
 /**
  地方で絞込み画面表示処理
@@ -228,8 +222,7 @@ PrefectureListViewDelegate>
 - (void)showAreaFilterViewControllerWithButton:(UIButton *)button
 {
     AreaFilterViewController *vc = [AreaFilterViewController new];
-    vc.model = [AreaFilterModel new];
-    vc.model.selectedAreaTypes = [self.model.selectedAreaTypes mutableCopy];
+    [vc setupPresenterWithModel:[self.presenter createAreaFilterModel]];
     vc.delegate = self;
     vc.modalPresentationStyle = UIModalPresentationPopover;
     vc.preferredContentSize = vc.view.frame.size;
@@ -251,7 +244,7 @@ PrefectureListViewDelegate>
 - (void)showWeatherViewControllerWithModel:(WeatherModel *)model
 {
     WeatherViewController *vc = [WeatherViewController new];
-    vc.model = model;
+    [vc setupPresenterWithModel:model];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AreaFilterCellModel.h"
 
 @interface AreaFilterTableViewCell : UITableViewCell
 
 /**
  表示処理
  
- @param area 地方名
- @param isCheck チェック状態
+ @param cellModel セルの表示情報
  */
-- (void)displayArea:(NSString *)area
-            isCheck:(BOOL)isCheck;
+- (void)displayInfo:(AreaFilterCellModel *)cellModel;
 
 @end

@@ -25,14 +25,12 @@
 /**
  セルの表示処理
 
- @param prefectureInfo 都道府県情報
- @param isFavorite お気に入りフラグ
+ @param cellModel 表示情報
  */
-- (void)displayPrefectureInfo:(CityDataList *)prefectureInfo
-                   isFavorite:(BOOL)isFavorite
+- (void)displayInfo:(PrefectureListCellModel *)cellModel
 {
-    self.titleLabel.text = prefectureInfo.name;
-    self.favoriteButton.selected = isFavorite;
+    self.titleLabel.text = cellModel.prefectureData.name;
+    self.favoriteButton.selected = cellModel.isFavorite;
 }
 
 

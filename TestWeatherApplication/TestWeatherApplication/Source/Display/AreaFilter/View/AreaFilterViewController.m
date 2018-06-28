@@ -9,6 +9,7 @@
 #import "AreaFilterViewController.h"
 #import "AreaFilterTableViewCell.h"
 #import "AreaFilterView.h"
+#import "AreaFilterPresenter.h"
 
 //=======================================================
 // 地方で絞込み画面
@@ -18,9 +19,23 @@
 
 @property (nonatomic) AreaFilterView *areaFilterView;
 
+@property (nonatomic) AreaFilterPresenter *presenter;
+
 @end
 
 @implementation AreaFilterViewController
+
+/**
+ プレゼンターの設定
+ 
+ @param model モデル
+ */
+- (void)setupPresenterWithModel:(AreaFilterModel *)model
+{
+    self.presenter = [AreaFilterPresenter new];
+    self.presenter.model = model;
+    self.presenter.viewController = self;
+}
 
 #pragma mark - Override
 - (void)loadView
@@ -38,7 +53,7 @@
     
     [self setupTableView];
     
-    [self.areaFilterView displayIsAllCheck:[self.model isAllCheck]];
+    [self.presenter setupData];
 }
 
 
@@ -47,7 +62,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 #pragma mark - UITableView DataSource
@@ -60,7 +74,7 @@
  */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return self.model.tableDataList.count;
+    return [self.presenter tableViewNumberOfRowsInSection:section];
 }
 
 
@@ -76,9 +90,7 @@
     NSString *cellName = NSStringFromClass([AreaFilterTableViewCell class]);
     AreaFilterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName
                                                                         forIndexPath:indexPath];
-    NSNumber *num = self.model.tableDataList[indexPath.row];
-    [cell displayArea:[self.model getTitleFromAreaType:num.integerValue]
-              isCheck:[self.model isCheckWithAreaType:num.integerValue]];
+    [cell displayInfo:[self.presenter tableViewCellForRowAtIndexPath:indexPath]];
     
     return cell;
 }
@@ -93,17 +105,7 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSNumber *num = self.model.tableDataList[indexPath.row];
-    [self.model changedSelectedArreaType:num.integerValue];
-    
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    
-    [self.areaFilterView displayIsAllCheck:[self.model isAllCheck]];
-    
-    if ([self.delegate respondsToSelector:@selector(areaFilterViewController:didChangeSelectedAreaTypes:)]) {
-        
-        [self.delegate areaFilterViewController:self didChangeSelectedAreaTypes:self.model.selectedAreaTypes];
-    }
+    [self.presenter didTablebleViewSelectRowAtIndexPath:indexPath];
 }
 
 
@@ -117,10 +119,7 @@
 - (void)areaFilterView:(AreaFilterView *)areaFilterView
  didTapAllSelectButton:(UIButton *)button
 {
-    [self.model setupIsAllCheck:![self.model isAllCheck]];
-    [self.areaFilterView.tableView reloadData];
-    
-    [self.areaFilterView displayIsAllCheck:[self.model isAllCheck]];
+    [self.presenter didTapAllSelectButton];
 }
 
 
@@ -136,6 +135,27 @@
     NSString *cellName = NSStringFromClass([AreaFilterTableViewCell class]);
     [self.areaFilterView.tableView registerNib:[UINib nibWithNibName:cellName bundle:nil]
          forCellReuseIdentifier:cellName];
+}
+
+
+#pragma mark - Display Data
+/**
+ 全選択ボタンの表示設定
+ 
+ @param isAllCheck 全選択フラグ
+ */
+- (void)displayIsAllCheck:(BOOL)isAllCheck
+{
+    [self.areaFilterView displayIsAllCheck:isAllCheck];
+}
+
+
+/**
+ テーブルの表示を更新する
+ */
+- (void)reloadTableView
+{
+    [self.areaFilterView.tableView reloadData];
 }
 
 @end

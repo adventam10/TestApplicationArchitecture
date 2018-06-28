@@ -33,6 +33,52 @@
 }
 
 
+#pragma mark - Setter
+/**
+ 絞込み地方の設定
+
+ @param selectedAreaTypes 絞込み地方一覧
+ */
+- (void)setSelectedAreaTypes:(NSArray<NSNumber *> *)selectedAreaTypes
+{
+    _selectedAreaTypes = selectedAreaTypes;
+    if ([self.delegate respondsToSelector:@selector(didUpdateSelectedAreaTypesOfPrefectureListModel:)]) {
+        
+        [self.delegate didUpdateSelectedAreaTypesOfPrefectureListModel:self];
+    }
+}
+
+
+/**
+ お気に入りのみ表示フラグの設定
+
+ @param isFavoriteButtonCheck お気に入りのみ表示フラグ
+ */
+- (void)setIsFavoriteButtonCheck:(BOOL)isFavoriteButtonCheck
+{
+    _isFavoriteButtonCheck = isFavoriteButtonCheck;
+    if ([self.delegate respondsToSelector:@selector(didUpdateIsFavoriteButtonCheckOfPrefectureListModel:)]) {
+        
+        [self.delegate didUpdateIsFavoriteButtonCheckOfPrefectureListModel:self];
+    }
+}
+
+
+/**
+ お気に入り一覧の設定
+ 
+ @param favoriteCityIds お気に入り一覧
+ */
+- (void)setFavoriteCityIds:(NSArray<NSString *> *)favoriteCityIds
+{
+    _favoriteCityIds = favoriteCityIds;
+    if ([self.delegate respondsToSelector:@selector(didUpdateFavoriteCityIdsOfPrefectureListModel:)]) {
+        
+        [self.delegate didUpdateFavoriteCityIdsOfPrefectureListModel:self];
+    }
+}
+
+
 #pragma mark - Status
 /**
  対象の都道府県がお気に入りか判定する
@@ -83,11 +129,17 @@
     if (predicates.count == 0) {
         
         self.tableDataList = self.originalTableDataList;
-        return;
+
+    } else {
+        
+        NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+        self.tableDataList = [self.originalTableDataList filteredArrayUsingPredicate:predicate];
     }
     
-    NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
-    self.tableDataList = [self.originalTableDataList filteredArrayUsingPredicate:predicate];
+    if ([self.delegate respondsToSelector:@selector(didUpdateTableDataListOfPrefectureListModel:)]) {
+        
+        [self.delegate didUpdateTableDataListOfPrefectureListModel:self];
+    }
 }
 
 
@@ -122,6 +174,11 @@
     
     [self userDefaultsSaveObject:favoriteCityIds key:TWAUserDefaultsFavorites];
     self.favoriteCityIds = [self userDefaultsLoadDataWithKey:TWAUserDefaultsFavorites];
+    
+    if ([self.delegate respondsToSelector:@selector(didUpdateFavoriteCityIdsOfPrefectureListModel:)]) {
+        
+        [self.delegate didUpdateFavoriteCityIdsOfPrefectureListModel:self];
+    }
 }
 
 
@@ -253,4 +310,38 @@
     return object;
 }
 
+
+#pragma mark - Request
+/**
+ 天気情報の取得処理
+ 
+ @param prefectureData 対象都道府県データ
+ */
+- (void)requestWeatherWithPrefectureData:(CityDataList *)prefectureData
+{
+    WeatherModel *model = [WeatherModel new];
+    model.prefectureInfo = prefectureData;
+    __weak typeof(self) weakSelf = self;
+    [model requestWeatherWithCityId:prefectureData.cityId
+                            success:^()
+     {
+         if ([weakSelf.delegate respondsToSelector:@selector(prefectureListModel:didCompleteWeatherRequestWithModel:errorMessage:isSuccess:)]) {
+             
+             [weakSelf.delegate prefectureListModel:weakSelf
+                 didCompleteWeatherRequestWithModel:model
+                                       errorMessage:nil
+                                          isSuccess:YES];
+         }
+     }
+                            failure:^(NSString *message, NSError *error)
+     {
+         if ([weakSelf.delegate respondsToSelector:@selector(prefectureListModel:didCompleteWeatherRequestWithModel:errorMessage:isSuccess:)]) {
+             
+             [weakSelf.delegate prefectureListModel:weakSelf
+                 didCompleteWeatherRequestWithModel:model
+                                       errorMessage:message
+                                          isSuccess:NO];
+         }
+     }];
+}
 @end

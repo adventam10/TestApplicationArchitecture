@@ -8,6 +8,7 @@
 
 #import "WeatherViewController.h"
 #import "WeatherView.h"
+#import "WeatherPresenter.h"
 
 //=======================================================
 // 天気画面
@@ -17,9 +18,24 @@
 
 @property (nonatomic) WeatherView *weatherView;
 
+@property (nonatomic) WeatherPresenter *presenter;
+
 @end
 
 @implementation WeatherViewController
+
+/**
+ プレゼンターの設定
+
+ @param model モデル
+ */
+- (void)setupPresenterWithModel:(WeatherModel *)model
+{
+    self.presenter = [WeatherPresenter new];
+    self.presenter.model = model;
+    self.presenter.viewController = self;
+}
+
 
 #pragma mark - Override
 - (void)loadView
@@ -35,7 +51,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setupNavigationBar];
     
-    [self.weatherView displayForecasts:self.model.weatherResponse.forecasts];
+    [self.presenter setupData];
 }
 
 
@@ -52,7 +68,6 @@
  */
 - (void)setupNavigationBar
 {
-    self.title = self.model.prefectureInfo.name;
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                   target:self
@@ -68,21 +83,7 @@
  */
 - (void)tappedRefreshButton:(UIBarButtonItem *)button
 {
-    [SVProgressHUD show];
-    __weak typeof(self) weakSelf = self;
-    [self.model requestWeatherWithCityId:self.model.prefectureInfo.cityId
-                           success:^()
-     {
-         [SVProgressHUD dismiss];
-         [weakSelf.weatherView displayForecasts:weakSelf.model.weatherResponse.forecasts];
-     }
-                           failure:^(NSString *message, NSError *error)
-     {
-         [SVProgressHUD dismiss];
-         [weakSelf showAlertYesOnlyWithTitle:@""
-                                     message:message
-                                    yesBlock:nil];
-     }];
+    [self.presenter didTapRefreshButton];
 }
 
 
@@ -113,6 +114,29 @@
                                 }]];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+#pragma mark - Display Data
+/**
+ タイトルを表示する
+ 
+ @param title タイトル
+ */
+- (void)displayTitle:(NSString *)title
+{
+    self.title = title;
+}
+
+
+/**
+ 天気を表示する（今日・明日・明後日の３日分）
+ 
+ @param forecasts 天気情報一覧
+ */
+- (void)displayForecasts:(NSArray <WeatherResponseForecast *> *)forecasts
+{
+    [self.weatherView displayForecasts:forecasts];
 }
 
 @end

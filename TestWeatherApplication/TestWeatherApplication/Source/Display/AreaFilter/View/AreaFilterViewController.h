@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "AreaFilterModel.h"
 
-
-
 @class AreaFilterViewController;
 @protocol AreaFilterViewControllerDelegate<NSObject>
 
@@ -29,6 +27,24 @@
 
 @property (nonatomic, weak) id<AreaFilterViewControllerDelegate> delegate;
 
-@property (nonatomic) AreaFilterModel *model;
+/**
+ プレゼンターの設定
+ 
+ @param model モデル
+ */
+- (void)setupPresenterWithModel:(AreaFilterModel *)model;
+
+#pragma mark - Display Data
+/**
+ テーブルの表示を更新する
+ */
+- (void)reloadTableView;
+
+/**
+ 全選択ボタンの表示設定
+ 
+ @param isAllCheck 全選択フラグ
+ */
+- (void)displayIsAllCheck:(BOOL)isAllCheck;
 
 @end
