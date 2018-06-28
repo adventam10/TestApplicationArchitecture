@@ -21,28 +21,17 @@
 
 @implementation AreaFilterTableViewCell
 
-#pragma mark - Setter
 /**
- 地方のチェック状態の設定を行う
- 
- @param isCheck 都道府県情報
+ 表示処理
+
+ @param area 地方名
+ @param isCheck チェック状態
  */
-- (void)setIsCheck:(BOOL)isCheck
+- (void)displayArea:(NSString *)area
+            isCheck:(BOOL)isCheck
 {
-    _isCheck = isCheck;
+    self.areaLabel.text = area;
     self.checkImageView.highlighted = isCheck;
-}
-
-
-/**
- 地方ラベルの表示設定を行う
- 
- @param title 地方の文字列
- */
-- (void)setTitle:(NSString *)title
-{
-    _title = title;
-    self.areaLabel.text = title;
 }
 
 @end

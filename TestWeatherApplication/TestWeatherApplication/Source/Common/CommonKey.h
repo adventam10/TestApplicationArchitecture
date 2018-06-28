@@ -28,4 +28,15 @@ static NSString * const TWAArea = @"area";
 ///お気に入り
 static NSString * const TWAUserDefaultsFavorites = @"userDefaultsFavorites";
 
+typedef NS_ENUM(NSInteger, AFVAreaType) {
+    AFVAreaTypeHokkaido = 0,
+    AFVAreaTypeTohoku,
+    AFVAreaTypeKanto,
+    AFVAreaTypeChubu,
+    AFVAreaTypeKinki,
+    AFVAreaTypeChugoku,
+    AFVAreaTypeShikoku,
+    AFVAreaTypeKyushu,
+};
+
 #endif /* CommonKey_h */

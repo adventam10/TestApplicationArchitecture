@@ -10,8 +10,13 @@
 
 @interface AreaFilterTableViewCell : UITableViewCell
 
-@property (nonatomic) BOOL isCheck;
-
-@property (nonatomic) NSString *title;
+/**
+ 表示処理
+ 
+ @param area 地方名
+ @param isCheck チェック状態
+ */
+- (void)displayArea:(NSString *)area
+            isCheck:(BOOL)isCheck;
 
 @end

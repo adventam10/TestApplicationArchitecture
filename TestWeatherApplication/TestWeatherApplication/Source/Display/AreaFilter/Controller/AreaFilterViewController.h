@@ -7,17 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AreaFilterModel.h"
 
-typedef NS_ENUM(NSInteger, AFVAreaType) {
-    AFVAreaTypeHokkaido = 0,
-    AFVAreaTypeTohoku,
-    AFVAreaTypeKanto,
-    AFVAreaTypeChubu,
-    AFVAreaTypeKinki,
-    AFVAreaTypeChugoku,
-    AFVAreaTypeShikoku,
-    AFVAreaTypeKyushu,
-};
+
 
 @class AreaFilterViewController;
 @protocol AreaFilterViewControllerDelegate<NSObject>
@@ -37,6 +29,6 @@ typedef NS_ENUM(NSInteger, AFVAreaType) {
 
 @property (nonatomic, weak) id<AreaFilterViewControllerDelegate> delegate;
 
-@property (nonatomic) NSMutableArray <NSNumber *> *selectedAreaTypes;
+@property (nonatomic) AreaFilterModel *model;
 
 @end

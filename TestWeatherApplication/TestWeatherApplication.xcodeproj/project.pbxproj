@@ -20,16 +20,27 @@
 		0E7E1D7B20E12943005EDFB6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1D7220E12943005EDFB6 /* SVProgressHUD.bundle */; };
 		0E7E1D7C20E12943005EDFB6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D7420E12943005EDFB6 /* SVProgressHUD.m */; };
 		0E7E1D7D20E12943005EDFB6 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D7620E12943005EDFB6 /* SVRadialGradientLayer.m */; };
-		0E7E1D8220E12AB5005EDFB6 /* PrefectureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D8020E12AB5005EDFB6 /* PrefectureListViewController.m */; };
-		0E7E1D8320E12AB5005EDFB6 /* PrefectureListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1D8120E12AB5005EDFB6 /* PrefectureListViewController.xib */; };
-		0E7E1D8720E12AC5005EDFB6 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D8520E12AC5005EDFB6 /* WeatherViewController.m */; };
-		0E7E1D8820E12AC5005EDFB6 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1D8620E12AC5005EDFB6 /* WeatherViewController.xib */; };
-		0E7E1D8C20E12AD5005EDFB6 /* AreaFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D8A20E12AD5005EDFB6 /* AreaFilterViewController.m */; };
-		0E7E1D8D20E12AD5005EDFB6 /* AreaFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1D8B20E12AD5005EDFB6 /* AreaFilterViewController.xib */; };
-		0E7E1D9320E135D8005EDFB6 /* PrefectureListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D9120E135D8005EDFB6 /* PrefectureListTableViewCell.m */; };
-		0E7E1D9420E135D8005EDFB6 /* PrefectureListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1D9220E135D8005EDFB6 /* PrefectureListTableViewCell.xib */; };
-		0E7E1D9820E135EA005EDFB6 /* AreaFilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D9620E135EA005EDFB6 /* AreaFilterTableViewCell.m */; };
-		0E7E1D9920E135EA005EDFB6 /* AreaFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1D9720E135EA005EDFB6 /* AreaFilterTableViewCell.xib */; };
+		0E7E1DA620E4934C005EDFB6 /* PrefectureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1D9F20E4934B005EDFB6 /* PrefectureListViewController.m */; };
+		0E7E1DA820E4934C005EDFB6 /* PrefectureListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DA420E4934C005EDFB6 /* PrefectureListTableViewCell.m */; };
+		0E7E1DA920E4934C005EDFB6 /* PrefectureListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DA520E4934C005EDFB6 /* PrefectureListTableViewCell.xib */; };
+		0E7E1DB320E49361005EDFB6 /* AreaFilterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DAC20E49361005EDFB6 /* AreaFilterTableViewCell.m */; };
+		0E7E1DB420E49361005EDFB6 /* AreaFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DAD20E49361005EDFB6 /* AreaFilterTableViewCell.xib */; };
+		0E7E1DB520E49361005EDFB6 /* AreaFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DB020E49361005EDFB6 /* AreaFilterViewController.m */; };
+		0E7E1DBD20E4936F005EDFB6 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DBB20E4936F005EDFB6 /* WeatherViewController.m */; };
+		0E7E1DC120E49390005EDFB6 /* PrefectureListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DC020E49390005EDFB6 /* PrefectureListModel.m */; };
+		0E7E1DC420E493AC005EDFB6 /* AreaFilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DC320E493AC005EDFB6 /* AreaFilterModel.m */; };
+		0E7E1DC720E493F2005EDFB6 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DC620E493F2005EDFB6 /* WeatherModel.m */; };
+		0E7E1DCA20E4945C005EDFB6 /* AreaFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DC920E4945C005EDFB6 /* AreaFilterView.m */; };
+		0E7E1DCC20E49473005EDFB6 /* AreaFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DCB20E49473005EDFB6 /* AreaFilterView.xib */; };
+		0E7E1DCF20E494B9005EDFB6 /* PrefectureListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DCE20E494B9005EDFB6 /* PrefectureListView.m */; };
+		0E7E1DD120E494C1005EDFB6 /* PrefectureListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DD020E494C1005EDFB6 /* PrefectureListView.xib */; };
+		0E7E1DD420E49529005EDFB6 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DD320E49529005EDFB6 /* WeatherView.m */; };
+		0E7E1DD620E49530005EDFB6 /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DD520E49530005EDFB6 /* WeatherView.xib */; };
+		0E7E1DDA20E4AE4F005EDFB6 /* WeatherInfoBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DD920E4AE4F005EDFB6 /* WeatherInfoBaseView.m */; };
+		0E7E1DDD20E4AEA3005EDFB6 /* WeatherInfoLargeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DDC20E4AEA3005EDFB6 /* WeatherInfoLargeView.m */; };
+		0E7E1DDF20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DDE20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib */; };
+		0E7E1DE220E4AEBC005EDFB6 /* WeatherInfoSmallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DE120E4AEBC005EDFB6 /* WeatherInfoSmallView.m */; };
+		0E7E1DE420E4AEC1005EDFB6 /* WeatherInfoSmallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DE320E4AEC1005EDFB6 /* WeatherInfoSmallView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,23 +87,43 @@
 		0E7E1D7520E12943005EDFB6 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		0E7E1D7620E12943005EDFB6 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		0E7E1D7E20E129F5005EDFB6 /* TestWeatherApplication-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestWeatherApplication-PrefixHeader.pch"; sourceTree = "<group>"; };
-		0E7E1D7F20E12AB5005EDFB6 /* PrefectureListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListViewController.h; sourceTree = "<group>"; };
-		0E7E1D8020E12AB5005EDFB6 /* PrefectureListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListViewController.m; sourceTree = "<group>"; };
-		0E7E1D8120E12AB5005EDFB6 /* PrefectureListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrefectureListViewController.xib; sourceTree = "<group>"; };
-		0E7E1D8420E12AC5005EDFB6 /* WeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
-		0E7E1D8520E12AC5005EDFB6 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
-		0E7E1D8620E12AC5005EDFB6 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
-		0E7E1D8920E12AD5005EDFB6 /* AreaFilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterViewController.h; sourceTree = "<group>"; };
-		0E7E1D8A20E12AD5005EDFB6 /* AreaFilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterViewController.m; sourceTree = "<group>"; };
-		0E7E1D8B20E12AD5005EDFB6 /* AreaFilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaFilterViewController.xib; sourceTree = "<group>"; };
-		0E7E1D9020E135D8005EDFB6 /* PrefectureListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListTableViewCell.h; sourceTree = "<group>"; };
-		0E7E1D9120E135D8005EDFB6 /* PrefectureListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListTableViewCell.m; sourceTree = "<group>"; };
-		0E7E1D9220E135D8005EDFB6 /* PrefectureListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrefectureListTableViewCell.xib; sourceTree = "<group>"; };
-		0E7E1D9520E135EA005EDFB6 /* AreaFilterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterTableViewCell.h; sourceTree = "<group>"; };
-		0E7E1D9620E135EA005EDFB6 /* AreaFilterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterTableViewCell.m; sourceTree = "<group>"; };
-		0E7E1D9720E135EA005EDFB6 /* AreaFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaFilterTableViewCell.xib; sourceTree = "<group>"; };
 		0E7E1D9B20E29E9D005EDFB6 /* NetworkKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkKey.h; sourceTree = "<group>"; };
 		0E7E1D9C20E2A000005EDFB6 /* CommonKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonKey.h; sourceTree = "<group>"; };
+		0E7E1D9E20E4934B005EDFB6 /* PrefectureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefectureListViewController.h; sourceTree = "<group>"; };
+		0E7E1D9F20E4934B005EDFB6 /* PrefectureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefectureListViewController.m; sourceTree = "<group>"; };
+		0E7E1DA320E4934C005EDFB6 /* PrefectureListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefectureListTableViewCell.h; sourceTree = "<group>"; };
+		0E7E1DA420E4934C005EDFB6 /* PrefectureListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefectureListTableViewCell.m; sourceTree = "<group>"; };
+		0E7E1DA520E4934C005EDFB6 /* PrefectureListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrefectureListTableViewCell.xib; sourceTree = "<group>"; };
+		0E7E1DAB20E49361005EDFB6 /* AreaFilterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaFilterTableViewCell.h; sourceTree = "<group>"; };
+		0E7E1DAC20E49361005EDFB6 /* AreaFilterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaFilterTableViewCell.m; sourceTree = "<group>"; };
+		0E7E1DAD20E49361005EDFB6 /* AreaFilterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaFilterTableViewCell.xib; sourceTree = "<group>"; };
+		0E7E1DAF20E49361005EDFB6 /* AreaFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaFilterViewController.h; sourceTree = "<group>"; };
+		0E7E1DB020E49361005EDFB6 /* AreaFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaFilterViewController.m; sourceTree = "<group>"; };
+		0E7E1DBA20E4936F005EDFB6 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		0E7E1DBB20E4936F005EDFB6 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		0E7E1DBF20E49390005EDFB6 /* PrefectureListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListModel.h; sourceTree = "<group>"; };
+		0E7E1DC020E49390005EDFB6 /* PrefectureListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListModel.m; sourceTree = "<group>"; };
+		0E7E1DC220E493AC005EDFB6 /* AreaFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterModel.h; sourceTree = "<group>"; };
+		0E7E1DC320E493AC005EDFB6 /* AreaFilterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterModel.m; sourceTree = "<group>"; };
+		0E7E1DC520E493F2005EDFB6 /* WeatherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = "<group>"; };
+		0E7E1DC620E493F2005EDFB6 /* WeatherModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = "<group>"; };
+		0E7E1DC820E4945C005EDFB6 /* AreaFilterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaFilterView.h; sourceTree = "<group>"; };
+		0E7E1DC920E4945C005EDFB6 /* AreaFilterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaFilterView.m; sourceTree = "<group>"; };
+		0E7E1DCB20E49473005EDFB6 /* AreaFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaFilterView.xib; sourceTree = "<group>"; };
+		0E7E1DCD20E494B9005EDFB6 /* PrefectureListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefectureListView.h; sourceTree = "<group>"; };
+		0E7E1DCE20E494B9005EDFB6 /* PrefectureListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrefectureListView.m; sourceTree = "<group>"; };
+		0E7E1DD020E494C1005EDFB6 /* PrefectureListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrefectureListView.xib; sourceTree = "<group>"; };
+		0E7E1DD220E49529005EDFB6 /* WeatherView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
+		0E7E1DD320E49529005EDFB6 /* WeatherView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
+		0E7E1DD520E49530005EDFB6 /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		0E7E1DD820E4AE4F005EDFB6 /* WeatherInfoBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherInfoBaseView.h; sourceTree = "<group>"; };
+		0E7E1DD920E4AE4F005EDFB6 /* WeatherInfoBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherInfoBaseView.m; sourceTree = "<group>"; };
+		0E7E1DDB20E4AEA3005EDFB6 /* WeatherInfoLargeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherInfoLargeView.h; sourceTree = "<group>"; };
+		0E7E1DDC20E4AEA3005EDFB6 /* WeatherInfoLargeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherInfoLargeView.m; sourceTree = "<group>"; };
+		0E7E1DDE20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfoLargeView.xib; sourceTree = "<group>"; };
+		0E7E1DE020E4AEBC005EDFB6 /* WeatherInfoSmallView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherInfoSmallView.h; sourceTree = "<group>"; };
+		0E7E1DE120E4AEBC005EDFB6 /* WeatherInfoSmallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherInfoSmallView.m; sourceTree = "<group>"; };
+		0E7E1DE320E4AEC1005EDFB6 /* WeatherInfoSmallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfoSmallView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,10 +235,9 @@
 		0E7E1D6820E12943005EDFB6 /* AreaFilter */ = {
 			isa = PBXGroup;
 			children = (
-				0E7E1D8920E12AD5005EDFB6 /* AreaFilterViewController.h */,
-				0E7E1D8A20E12AD5005EDFB6 /* AreaFilterViewController.m */,
-				0E7E1D8B20E12AD5005EDFB6 /* AreaFilterViewController.xib */,
-				0E7E1D8F20E135C0005EDFB6 /* Cell */,
+				0E7E1DB220E49361005EDFB6 /* Model */,
+				0E7E1DAA20E49361005EDFB6 /* View */,
+				0E7E1DAE20E49361005EDFB6 /* Controller */,
 			);
 			path = AreaFilter;
 			sourceTree = "<group>";
@@ -215,10 +245,9 @@
 		0E7E1D6920E12943005EDFB6 /* PrefectureList */ = {
 			isa = PBXGroup;
 			children = (
-				0E7E1D7F20E12AB5005EDFB6 /* PrefectureListViewController.h */,
-				0E7E1D8020E12AB5005EDFB6 /* PrefectureListViewController.m */,
-				0E7E1D8120E12AB5005EDFB6 /* PrefectureListViewController.xib */,
-				0E7E1D8E20E135B7005EDFB6 /* Cell */,
+				0E7E1DA120E4934C005EDFB6 /* Model */,
+				0E7E1DA220E4934C005EDFB6 /* View */,
+				0E7E1D9D20E4934B005EDFB6 /* Controller */,
 			);
 			path = PrefectureList;
 			sourceTree = "<group>";
@@ -226,9 +255,9 @@
 		0E7E1D6A20E12943005EDFB6 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				0E7E1D8420E12AC5005EDFB6 /* WeatherViewController.h */,
-				0E7E1D8520E12AC5005EDFB6 /* WeatherViewController.m */,
-				0E7E1D8620E12AC5005EDFB6 /* WeatherViewController.xib */,
+				0E7E1DB820E4936F005EDFB6 /* Model */,
+				0E7E1DB720E4936F005EDFB6 /* View */,
+				0E7E1DB920E4936F005EDFB6 /* Controller */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -268,26 +297,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0E7E1D8E20E135B7005EDFB6 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				0E7E1D9020E135D8005EDFB6 /* PrefectureListTableViewCell.h */,
-				0E7E1D9120E135D8005EDFB6 /* PrefectureListTableViewCell.m */,
-				0E7E1D9220E135D8005EDFB6 /* PrefectureListTableViewCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		0E7E1D8F20E135C0005EDFB6 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				0E7E1D9520E135EA005EDFB6 /* AreaFilterTableViewCell.h */,
-				0E7E1D9620E135EA005EDFB6 /* AreaFilterTableViewCell.m */,
-				0E7E1D9720E135EA005EDFB6 /* AreaFilterTableViewCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		0E7E1D9A20E29E85005EDFB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +304,112 @@
 				0E7E1D9C20E2A000005EDFB6 /* CommonKey.h */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		0E7E1D9D20E4934B005EDFB6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1D9E20E4934B005EDFB6 /* PrefectureListViewController.h */,
+				0E7E1D9F20E4934B005EDFB6 /* PrefectureListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0E7E1DA120E4934C005EDFB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DBF20E49390005EDFB6 /* PrefectureListModel.h */,
+				0E7E1DC020E49390005EDFB6 /* PrefectureListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E7E1DA220E4934C005EDFB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DA320E4934C005EDFB6 /* PrefectureListTableViewCell.h */,
+				0E7E1DA420E4934C005EDFB6 /* PrefectureListTableViewCell.m */,
+				0E7E1DA520E4934C005EDFB6 /* PrefectureListTableViewCell.xib */,
+				0E7E1DCD20E494B9005EDFB6 /* PrefectureListView.h */,
+				0E7E1DCE20E494B9005EDFB6 /* PrefectureListView.m */,
+				0E7E1DD020E494C1005EDFB6 /* PrefectureListView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E7E1DAA20E49361005EDFB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DAB20E49361005EDFB6 /* AreaFilterTableViewCell.h */,
+				0E7E1DAC20E49361005EDFB6 /* AreaFilterTableViewCell.m */,
+				0E7E1DAD20E49361005EDFB6 /* AreaFilterTableViewCell.xib */,
+				0E7E1DC820E4945C005EDFB6 /* AreaFilterView.h */,
+				0E7E1DC920E4945C005EDFB6 /* AreaFilterView.m */,
+				0E7E1DCB20E49473005EDFB6 /* AreaFilterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E7E1DAE20E49361005EDFB6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DAF20E49361005EDFB6 /* AreaFilterViewController.h */,
+				0E7E1DB020E49361005EDFB6 /* AreaFilterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0E7E1DB220E49361005EDFB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DC220E493AC005EDFB6 /* AreaFilterModel.h */,
+				0E7E1DC320E493AC005EDFB6 /* AreaFilterModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E7E1DB720E4936F005EDFB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DD720E4AE32005EDFB6 /* WeatherInfo */,
+				0E7E1DD220E49529005EDFB6 /* WeatherView.h */,
+				0E7E1DD320E49529005EDFB6 /* WeatherView.m */,
+				0E7E1DD520E49530005EDFB6 /* WeatherView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E7E1DB820E4936F005EDFB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DC520E493F2005EDFB6 /* WeatherModel.h */,
+				0E7E1DC620E493F2005EDFB6 /* WeatherModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E7E1DB920E4936F005EDFB6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DBA20E4936F005EDFB6 /* WeatherViewController.h */,
+				0E7E1DBB20E4936F005EDFB6 /* WeatherViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0E7E1DD720E4AE32005EDFB6 /* WeatherInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DD820E4AE4F005EDFB6 /* WeatherInfoBaseView.h */,
+				0E7E1DD920E4AE4F005EDFB6 /* WeatherInfoBaseView.m */,
+				0E7E1DDB20E4AEA3005EDFB6 /* WeatherInfoLargeView.h */,
+				0E7E1DDC20E4AEA3005EDFB6 /* WeatherInfoLargeView.m */,
+				0E7E1DDE20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib */,
+				0E7E1DE020E4AEBC005EDFB6 /* WeatherInfoSmallView.h */,
+				0E7E1DE120E4AEBC005EDFB6 /* WeatherInfoSmallView.m */,
+				0E7E1DE320E4AEC1005EDFB6 /* WeatherInfoSmallView.xib */,
+			);
+			path = WeatherInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,16 +515,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E7E1D9920E135EA005EDFB6 /* AreaFilterTableViewCell.xib in Resources */,
 				0E7E1D7B20E12943005EDFB6 /* SVProgressHUD.bundle in Resources */,
 				0E7E1D7820E12943005EDFB6 /* CityData.json in Resources */,
-				0E7E1D9420E135D8005EDFB6 /* PrefectureListTableViewCell.xib in Resources */,
+				0E7E1DA920E4934C005EDFB6 /* PrefectureListTableViewCell.xib in Resources */,
 				0E1EF70320DF5DED00703E25 /* LaunchScreen.storyboard in Resources */,
-				0E7E1D8D20E12AD5005EDFB6 /* AreaFilterViewController.xib in Resources */,
 				0E1EF70020DF5DED00703E25 /* Assets.xcassets in Resources */,
-				0E7E1D8320E12AB5005EDFB6 /* PrefectureListViewController.xib in Resources */,
+				0E7E1DD120E494C1005EDFB6 /* PrefectureListView.xib in Resources */,
+				0E7E1DDF20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib in Resources */,
+				0E7E1DB420E49361005EDFB6 /* AreaFilterTableViewCell.xib in Resources */,
+				0E7E1DE420E4AEC1005EDFB6 /* WeatherInfoSmallView.xib in Resources */,
 				0E1EF6FE20DF5DE500703E25 /* Main.storyboard in Resources */,
-				0E7E1D8820E12AC5005EDFB6 /* WeatherViewController.xib in Resources */,
+				0E7E1DCC20E49473005EDFB6 /* AreaFilterView.xib in Resources */,
+				0E7E1DD620E49530005EDFB6 /* WeatherView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,16 +551,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E7E1D9320E135D8005EDFB6 /* PrefectureListTableViewCell.m in Sources */,
+				0E7E1DDD20E4AEA3005EDFB6 /* WeatherInfoLargeView.m in Sources */,
+				0E7E1DE220E4AEBC005EDFB6 /* WeatherInfoSmallView.m in Sources */,
+				0E7E1DDA20E4AE4F005EDFB6 /* WeatherInfoBaseView.m in Sources */,
 				0E1EF70620DF5DED00703E25 /* main.m in Sources */,
-				0E7E1D8720E12AC5005EDFB6 /* WeatherViewController.m in Sources */,
-				0E7E1D8C20E12AD5005EDFB6 /* AreaFilterViewController.m in Sources */,
+				0E7E1DD420E49529005EDFB6 /* WeatherView.m in Sources */,
 				0E7E1D7D20E12943005EDFB6 /* SVRadialGradientLayer.m in Sources */,
+				0E7E1DC120E49390005EDFB6 /* PrefectureListModel.m in Sources */,
 				0E1EF6F820DF5DE500703E25 /* AppDelegate.m in Sources */,
-				0E7E1D8220E12AB5005EDFB6 /* PrefectureListViewController.m in Sources */,
+				0E7E1DC420E493AC005EDFB6 /* AreaFilterModel.m in Sources */,
+				0E7E1DB520E49361005EDFB6 /* AreaFilterViewController.m in Sources */,
+				0E7E1DBD20E4936F005EDFB6 /* WeatherViewController.m in Sources */,
+				0E7E1DA620E4934C005EDFB6 /* PrefectureListViewController.m in Sources */,
+				0E7E1DA820E4934C005EDFB6 /* PrefectureListTableViewCell.m in Sources */,
+				0E7E1DB320E49361005EDFB6 /* AreaFilterTableViewCell.m in Sources */,
 				0E7E1D7C20E12943005EDFB6 /* SVProgressHUD.m in Sources */,
+				0E7E1DCF20E494B9005EDFB6 /* PrefectureListView.m in Sources */,
 				0E7E1D7920E12943005EDFB6 /* SVIndefiniteAnimatedView.m in Sources */,
-				0E7E1D9820E135EA005EDFB6 /* AreaFilterTableViewCell.m in Sources */,
+				0E7E1DCA20E4945C005EDFB6 /* AreaFilterView.m in Sources */,
+				0E7E1DC720E493F2005EDFB6 /* WeatherModel.m in Sources */,
 				0E7E1D7A20E12943005EDFB6 /* SVProgressAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,10 +23,9 @@
 
 @interface PrefectureListTableViewCell : UITableViewCell
 
-@property (nonatomic) NSDictionary *prefectureInfo;
-
-@property (nonatomic) BOOL isFavorite;
-
 @property (nonatomic, weak) id<PrefectureListTableViewCellDelegate> delegate;
+
+- (void)displayPrefectureInfo:(NSDictionary *)prefectureInfo
+                   isFavorite:(BOOL)isFavorite;
 
 @end

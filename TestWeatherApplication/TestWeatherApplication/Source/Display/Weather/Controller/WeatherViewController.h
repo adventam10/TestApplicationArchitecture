@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherModel.h"
 
 @interface WeatherViewController : UIViewController
 
-@property (nonatomic) NSDictionary *responseData;
-
-@property (nonatomic) NSDictionary *prefectureInfo;
+@property (nonatomic) WeatherModel *model;
 
 @end
