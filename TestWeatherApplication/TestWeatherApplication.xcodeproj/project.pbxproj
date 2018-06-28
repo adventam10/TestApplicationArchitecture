@@ -41,6 +41,17 @@
 		0E7E1DDF20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DDE20E4AEAD005EDFB6 /* WeatherInfoLargeView.xib */; };
 		0E7E1DE220E4AEBC005EDFB6 /* WeatherInfoSmallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DE120E4AEBC005EDFB6 /* WeatherInfoSmallView.m */; };
 		0E7E1DE420E4AEC1005EDFB6 /* WeatherInfoSmallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E7E1DE320E4AEC1005EDFB6 /* WeatherInfoSmallView.xib */; };
+		0E7E1DEB20E4BA23005EDFB6 /* CityData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DE720E4BA23005EDFB6 /* CityData.m */; };
+		0E7E1DEC20E4BA23005EDFB6 /* CityDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DEA20E4BA23005EDFB6 /* CityDataList.m */; };
+		0E7E1DFF20E4BA2D005EDFB6 /* WeatherResponseCopyright.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DF020E4BA2D005EDFB6 /* WeatherResponseCopyright.m */; };
+		0E7E1E0020E4BA2D005EDFB6 /* WeatherResponseDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DF220E4BA2D005EDFB6 /* WeatherResponseDescription.m */; };
+		0E7E1E0120E4BA2D005EDFB6 /* WeatherResponseForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DF420E4BA2D005EDFB6 /* WeatherResponseForecast.m */; };
+		0E7E1E0220E4BA2D005EDFB6 /* WeatherResponseImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DF620E4BA2D005EDFB6 /* WeatherResponseImage.m */; };
+		0E7E1E0320E4BA2D005EDFB6 /* WeatherResponseLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DF820E4BA2D005EDFB6 /* WeatherResponseLocation.m */; };
+		0E7E1E0420E4BA2D005EDFB6 /* WeatherResponseProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DFA20E4BA2D005EDFB6 /* WeatherResponseProvider.m */; };
+		0E7E1E0520E4BA2D005EDFB6 /* WeatherResponseTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DFC20E4BA2D005EDFB6 /* WeatherResponseTemperature.m */; };
+		0E7E1E0620E4BA2D005EDFB6 /* WeatherResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1DFE20E4BA2D005EDFB6 /* WeatherResponse.m */; };
+		0E7E1E0B20E4BE57005EDFB6 /* WeatherResponseMax.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7E1E0A20E4BE56005EDFB6 /* WeatherResponseMax.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +135,28 @@
 		0E7E1DE020E4AEBC005EDFB6 /* WeatherInfoSmallView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherInfoSmallView.h; sourceTree = "<group>"; };
 		0E7E1DE120E4AEBC005EDFB6 /* WeatherInfoSmallView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherInfoSmallView.m; sourceTree = "<group>"; };
 		0E7E1DE320E4AEC1005EDFB6 /* WeatherInfoSmallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfoSmallView.xib; sourceTree = "<group>"; };
+		0E7E1DE620E4BA23005EDFB6 /* CityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityData.h; sourceTree = "<group>"; };
+		0E7E1DE720E4BA23005EDFB6 /* CityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityData.m; sourceTree = "<group>"; };
+		0E7E1DE920E4BA23005EDFB6 /* CityDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityDataList.h; sourceTree = "<group>"; };
+		0E7E1DEA20E4BA23005EDFB6 /* CityDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityDataList.m; sourceTree = "<group>"; };
+		0E7E1DEF20E4BA2D005EDFB6 /* WeatherResponseCopyright.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseCopyright.h; sourceTree = "<group>"; };
+		0E7E1DF020E4BA2D005EDFB6 /* WeatherResponseCopyright.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseCopyright.m; sourceTree = "<group>"; };
+		0E7E1DF120E4BA2D005EDFB6 /* WeatherResponseDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseDescription.h; sourceTree = "<group>"; };
+		0E7E1DF220E4BA2D005EDFB6 /* WeatherResponseDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseDescription.m; sourceTree = "<group>"; };
+		0E7E1DF320E4BA2D005EDFB6 /* WeatherResponseForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseForecast.h; sourceTree = "<group>"; };
+		0E7E1DF420E4BA2D005EDFB6 /* WeatherResponseForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseForecast.m; sourceTree = "<group>"; };
+		0E7E1DF520E4BA2D005EDFB6 /* WeatherResponseImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseImage.h; sourceTree = "<group>"; };
+		0E7E1DF620E4BA2D005EDFB6 /* WeatherResponseImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseImage.m; sourceTree = "<group>"; };
+		0E7E1DF720E4BA2D005EDFB6 /* WeatherResponseLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseLocation.h; sourceTree = "<group>"; };
+		0E7E1DF820E4BA2D005EDFB6 /* WeatherResponseLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseLocation.m; sourceTree = "<group>"; };
+		0E7E1DF920E4BA2D005EDFB6 /* WeatherResponseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseProvider.h; sourceTree = "<group>"; };
+		0E7E1DFA20E4BA2D005EDFB6 /* WeatherResponseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseProvider.m; sourceTree = "<group>"; };
+		0E7E1DFB20E4BA2D005EDFB6 /* WeatherResponseTemperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseTemperature.h; sourceTree = "<group>"; };
+		0E7E1DFC20E4BA2D005EDFB6 /* WeatherResponseTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseTemperature.m; sourceTree = "<group>"; };
+		0E7E1DFD20E4BA2D005EDFB6 /* WeatherResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponse.h; sourceTree = "<group>"; };
+		0E7E1DFE20E4BA2D005EDFB6 /* WeatherResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponse.m; sourceTree = "<group>"; };
+		0E7E1E0920E4BE56005EDFB6 /* WeatherResponseMax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherResponseMax.h; sourceTree = "<group>"; };
+		0E7E1E0A20E4BE56005EDFB6 /* WeatherResponseMax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherResponseMax.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +351,7 @@
 		0E7E1DA120E4934C005EDFB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E7E1DE520E4BA23005EDFB6 /* CityData */,
 				0E7E1DBF20E49390005EDFB6 /* PrefectureListModel.h */,
 				0E7E1DC020E49390005EDFB6 /* PrefectureListModel.m */,
 			);
@@ -382,6 +416,7 @@
 		0E7E1DB820E4936F005EDFB6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E7E1DED20E4BA2D005EDFB6 /* WeatherResponse */,
 				0E7E1DC520E493F2005EDFB6 /* WeatherModel.h */,
 				0E7E1DC620E493F2005EDFB6 /* WeatherModel.m */,
 			);
@@ -410,6 +445,58 @@
 				0E7E1DE320E4AEC1005EDFB6 /* WeatherInfoSmallView.xib */,
 			);
 			path = WeatherInfo;
+			sourceTree = "<group>";
+		};
+		0E7E1DE520E4BA23005EDFB6 /* CityData */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DE620E4BA23005EDFB6 /* CityData.h */,
+				0E7E1DE720E4BA23005EDFB6 /* CityData.m */,
+				0E7E1DE820E4BA23005EDFB6 /* Property */,
+			);
+			path = CityData;
+			sourceTree = "<group>";
+		};
+		0E7E1DE820E4BA23005EDFB6 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DE920E4BA23005EDFB6 /* CityDataList.h */,
+				0E7E1DEA20E4BA23005EDFB6 /* CityDataList.m */,
+			);
+			path = Property;
+			sourceTree = "<group>";
+		};
+		0E7E1DED20E4BA2D005EDFB6 /* WeatherResponse */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1DEE20E4BA2D005EDFB6 /* Property */,
+				0E7E1DFD20E4BA2D005EDFB6 /* WeatherResponse.h */,
+				0E7E1DFE20E4BA2D005EDFB6 /* WeatherResponse.m */,
+			);
+			path = WeatherResponse;
+			sourceTree = "<group>";
+		};
+		0E7E1DEE20E4BA2D005EDFB6 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				0E7E1E0920E4BE56005EDFB6 /* WeatherResponseMax.h */,
+				0E7E1E0A20E4BE56005EDFB6 /* WeatherResponseMax.m */,
+				0E7E1DEF20E4BA2D005EDFB6 /* WeatherResponseCopyright.h */,
+				0E7E1DF020E4BA2D005EDFB6 /* WeatherResponseCopyright.m */,
+				0E7E1DF120E4BA2D005EDFB6 /* WeatherResponseDescription.h */,
+				0E7E1DF220E4BA2D005EDFB6 /* WeatherResponseDescription.m */,
+				0E7E1DF320E4BA2D005EDFB6 /* WeatherResponseForecast.h */,
+				0E7E1DF420E4BA2D005EDFB6 /* WeatherResponseForecast.m */,
+				0E7E1DF520E4BA2D005EDFB6 /* WeatherResponseImage.h */,
+				0E7E1DF620E4BA2D005EDFB6 /* WeatherResponseImage.m */,
+				0E7E1DF720E4BA2D005EDFB6 /* WeatherResponseLocation.h */,
+				0E7E1DF820E4BA2D005EDFB6 /* WeatherResponseLocation.m */,
+				0E7E1DF920E4BA2D005EDFB6 /* WeatherResponseProvider.h */,
+				0E7E1DFA20E4BA2D005EDFB6 /* WeatherResponseProvider.m */,
+				0E7E1DFB20E4BA2D005EDFB6 /* WeatherResponseTemperature.h */,
+				0E7E1DFC20E4BA2D005EDFB6 /* WeatherResponseTemperature.m */,
+			);
+			path = Property;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,25 +639,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E7E1DDD20E4AEA3005EDFB6 /* WeatherInfoLargeView.m in Sources */,
+				0E7E1E0B20E4BE57005EDFB6 /* WeatherResponseMax.m in Sources */,
 				0E7E1DE220E4AEBC005EDFB6 /* WeatherInfoSmallView.m in Sources */,
+				0E7E1E0420E4BA2D005EDFB6 /* WeatherResponseProvider.m in Sources */,
+				0E7E1E0320E4BA2D005EDFB6 /* WeatherResponseLocation.m in Sources */,
 				0E7E1DDA20E4AE4F005EDFB6 /* WeatherInfoBaseView.m in Sources */,
 				0E1EF70620DF5DED00703E25 /* main.m in Sources */,
 				0E7E1DD420E49529005EDFB6 /* WeatherView.m in Sources */,
+				0E7E1DFF20E4BA2D005EDFB6 /* WeatherResponseCopyright.m in Sources */,
 				0E7E1D7D20E12943005EDFB6 /* SVRadialGradientLayer.m in Sources */,
+				0E7E1E0520E4BA2D005EDFB6 /* WeatherResponseTemperature.m in Sources */,
 				0E7E1DC120E49390005EDFB6 /* PrefectureListModel.m in Sources */,
 				0E1EF6F820DF5DE500703E25 /* AppDelegate.m in Sources */,
 				0E7E1DC420E493AC005EDFB6 /* AreaFilterModel.m in Sources */,
 				0E7E1DB520E49361005EDFB6 /* AreaFilterViewController.m in Sources */,
 				0E7E1DBD20E4936F005EDFB6 /* WeatherViewController.m in Sources */,
+				0E7E1E0120E4BA2D005EDFB6 /* WeatherResponseForecast.m in Sources */,
 				0E7E1DA620E4934C005EDFB6 /* PrefectureListViewController.m in Sources */,
 				0E7E1DA820E4934C005EDFB6 /* PrefectureListTableViewCell.m in Sources */,
 				0E7E1DB320E49361005EDFB6 /* AreaFilterTableViewCell.m in Sources */,
+				0E7E1DEC20E4BA23005EDFB6 /* CityDataList.m in Sources */,
 				0E7E1D7C20E12943005EDFB6 /* SVProgressHUD.m in Sources */,
 				0E7E1DCF20E494B9005EDFB6 /* PrefectureListView.m in Sources */,
+				0E7E1E0020E4BA2D005EDFB6 /* WeatherResponseDescription.m in Sources */,
+				0E7E1DEB20E4BA23005EDFB6 /* CityData.m in Sources */,
 				0E7E1D7920E12943005EDFB6 /* SVIndefiniteAnimatedView.m in Sources */,
 				0E7E1DCA20E4945C005EDFB6 /* AreaFilterView.m in Sources */,
 				0E7E1DC720E493F2005EDFB6 /* WeatherModel.m in Sources */,
 				0E7E1D7A20E12943005EDFB6 /* SVProgressAnimatedView.m in Sources */,
+				0E7E1E0220E4BA2D005EDFB6 /* WeatherResponseImage.m in Sources */,
+				0E7E1E0620E4BA2D005EDFB6 /* WeatherResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

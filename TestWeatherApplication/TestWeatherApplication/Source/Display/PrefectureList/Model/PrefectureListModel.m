@@ -8,6 +8,10 @@
 
 #import "PrefectureListModel.h"
 
+//=======================================================
+// 都道府県一覧画面用Model
+//=======================================================
+
 @implementation PrefectureListModel
 
 #pragma mark - Initialize
@@ -50,7 +54,8 @@
 - (void)setupOriginalTableDataList
 {
     NSDictionary *cityData = [self loadJsonFileWithFileName:@"CityData"];
-    self.originalTableDataList = cityData[TWACityDataList];
+    CityData *data = [[CityData alloc] initWithDictionary:cityData];
+    self.originalTableDataList = data.cityDataList;
 }
 
 

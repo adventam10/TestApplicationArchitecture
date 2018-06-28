@@ -8,6 +8,10 @@
 
 #import "WeatherInfoLargeView.h"
 
+//=======================================================
+// 天気情報表示View大（今日の天気用）
+//=======================================================
+
 @implementation WeatherInfoLargeView
 
 @end

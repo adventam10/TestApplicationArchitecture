@@ -8,6 +8,10 @@
 
 #import "PrefectureListView.h"
 
+//=======================================================
+// 都道府県一覧View
+//=======================================================
+
 @implementation PrefectureListView
 
 - (instancetype)init

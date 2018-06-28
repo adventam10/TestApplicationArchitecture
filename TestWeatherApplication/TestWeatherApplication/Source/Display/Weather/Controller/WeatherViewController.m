@@ -35,7 +35,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setupNavigationBar];
     
-    [self.weatherView displayForecasts:self.model.responseData[NWKForecasts]];
+    [self.weatherView displayForecasts:self.model.weatherResponse.forecasts];
 }
 
 
@@ -52,7 +52,7 @@
  */
 - (void)setupNavigationBar
 {
-    self.title = self.model.prefectureInfo[TWAName];
+    self.title = self.model.prefectureInfo.name;
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                   target:self
@@ -70,13 +70,11 @@
 {
     [SVProgressHUD show];
     __weak typeof(self) weakSelf = self;
-    [self.model requestWeatherWithCityId:self.model.prefectureInfo[TWACityId]
-                           success:^(NSDictionary *jsonData)
+    [self.model requestWeatherWithCityId:self.model.prefectureInfo.cityId
+                           success:^()
      {
          [SVProgressHUD dismiss];
-         
-         weakSelf.model.responseData = jsonData;
-         [weakSelf.weatherView displayForecasts:weakSelf.model.responseData[NWKForecasts]];
+         [weakSelf.weatherView displayForecasts:weakSelf.model.weatherResponse.forecasts];
      }
                            failure:^(NSString *message, NSError *error)
      {

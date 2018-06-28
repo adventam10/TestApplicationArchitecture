@@ -22,6 +22,6 @@
  
  @param forecasts 天気情報一覧
  */
-- (void)displayForecasts:(NSArray <NSDictionary *> *)forecasts;
+- (void)displayForecasts:(NSArray <WeatherResponseForecast *> *)forecasts;
 
 @end

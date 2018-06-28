@@ -8,6 +8,10 @@
 
 #import "WeatherModel.h"
 
+//=======================================================
+// 天気画面用Model
+//=======================================================
+
 @implementation WeatherModel
 
 #pragma mark - Request
@@ -20,12 +24,41 @@
  @return タスク
  */
 - (NSURLSessionDataTask *)requestWeatherWithCityId:(NSString *)cityId
-                                           success:(void (^)(NSDictionary *jsonData))success
+                                           success:(void (^)(void))success
                                            failure:(void (^)(NSString *message, NSError *error))failure
+{
+    __weak typeof(self) weakSelf = self;
+    NSURLSessionDataTask *task =
+    [self requestWithURL:[self createRequestURLWithCityId:cityId]
+                 success:^(NSDictionary *jsonData)
+    {
+        weakSelf.weatherResponse = [[WeatherResponse alloc] initWithDictionary:jsonData];
+        if (success) {
+            
+            success();
+        }
+    }
+                 failure:failure];
+    
+    return task;
+}
+
+
+/**
+ 通信処理
+ 
+ @param url URL
+ @param success 通信成功時の処理
+ @param failure 通信失敗時の処理
+ @return タスク
+ */
+- (NSURLSessionDataTask *)requestWithURL:(NSURL *)url
+                                 success:(void (^)(NSDictionary *jsonData))success
+                                 failure:(void (^)(NSString *message, NSError *error))failure
 {
     NSURLSession *session = [self createURLSession];
     NSURLSessionDataTask *task =
-    [session dataTaskWithURL:[self createRequestURLWithCityId:cityId]
+    [session dataTaskWithURL:url
            completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
      {
          [session invalidateAndCancel];

@@ -8,6 +8,10 @@
 
 #import "WeatherInfoBaseView.h"
 
+//=======================================================
+// 天気情報表示View
+//=======================================================
+
 @implementation WeatherInfoBaseView
 
 #pragma mark - initialize
@@ -53,12 +57,12 @@
  @param forecast 天気情報
  @param subDateText 日付文字列（yyyy/MM/dd(E)形式）
  */
-- (void)displayForecast:(NSDictionary *)forecast
+- (void)displayForecast:(WeatherResponseForecast *)forecast
             subDateText:(NSString *)subDateText
 {
     self.subDateLabel.text = subDateText;
-    self.dateLabel.text = forecast[NWKDateLabel];
-    self.telopLabel.text = forecast[NWKTelop];
+    self.dateLabel.text = forecast.dateLabel;
+    self.telopLabel.text = forecast.telop;
     self.imageView.image = [self getImageFromForecast:forecast];
     self.maxCelsiusLabel.text = [self getMaxCelsiusFromForecast:forecast];
     self.minCelsiusLabel.text = [self getMinCelsiusFromForecast:forecast];
@@ -71,20 +75,15 @@
  @param forecast 天気情報
  @return 天気画像
  */
-- (UIImage *)getImageFromForecast:(NSDictionary *)forecast
+- (UIImage *)getImageFromForecast:(WeatherResponseForecast *)forecast
 {
-    NSDictionary *image = forecast[NWKImage];
-    if ([self isCheckNull:image]) {
+    WeatherResponseImage *image = forecast.image;
+    if (!image) {
         
         return nil;
     }
     
-    NSString *url = image[NWKUrl];
-    if ([self isCheckNull:url]) {
-        
-        return nil;
-    }
-    
+    NSString *url = image.url;
     if (url.length == 0) {
         
         return nil;
@@ -101,32 +100,17 @@
  @param forecast 天気情報
  @return 最高気温
  */
-- (NSString *)getMaxCelsiusFromForecast:(NSDictionary *)forecast
+- (NSString *)getMaxCelsiusFromForecast:(WeatherResponseForecast *)forecast
 {
-    NSDictionary *temperature = forecast[NWKTemperature];
-    if ([self isCheckNull:temperature]) {
+    WeatherResponseTemperature *temperature = forecast.temperature;
+    if (!temperature ||
+        !temperature.max ||
+        temperature.max.celsius.length == 0) {
         
         return @"-";
     }
     
-    NSDictionary *max = temperature[NWKMax];
-    if ([self isCheckNull:max]) {
-        
-        return @"-";
-    }
-    
-    NSString *celsius = max[NWKCelsius];
-    if ([self isCheckNull:celsius]) {
-        
-        return @"-";
-    }
-    
-    if (celsius.length == 0) {
-        
-        return @"-";
-    }
-    
-    return [celsius stringByAppendingString:@"℃"];
+    return [temperature.max.celsius stringByAppendingString:@"℃"];
 }
 
 
@@ -136,44 +120,17 @@
  @param forecast 天気情報
  @return 最低気温
  */
-- (NSString *)getMinCelsiusFromForecast:(NSDictionary *)forecast
+- (NSString *)getMinCelsiusFromForecast:(WeatherResponseForecast *)forecast
 {
-    NSDictionary *temperature = forecast[NWKTemperature];
-    if ([self isCheckNull:temperature]) {
+    WeatherResponseTemperature *temperature = forecast.temperature;
+    if (!temperature ||
+        !temperature.min ||
+        temperature.min.celsius.length == 0) {
         
         return @"-";
     }
     
-    NSDictionary *min = temperature[NWKMin];
-    if ([self isCheckNull:min]) {
-        
-        return @"-";
-    }
-    
-    NSString *celsius = min[NWKCelsius];
-    if ([self isCheckNull:celsius]) {
-        
-        return @"-";
-    }
-    
-    if (celsius.length == 0) {
-        
-        return @"-";
-    }
-    
-    return [celsius stringByAppendingString:@"℃"];
-}
-
-
-/**
- 対象オブジェクトがヌルか判定する
- 
- @param object 対象オブジェクト
- @return YES:ヌル、NO:ヌル以外
- */
-- (BOOL)isCheckNull:(id)object
-{
-    return [object isKindOfClass:[NSNull class]];
+    return [temperature.min.celsius stringByAppendingString:@"℃"];
 }
 
 @end

@@ -21,11 +21,17 @@
 
 @implementation PrefectureListTableViewCell
 
-#pragma mark -
-- (void)displayPrefectureInfo:(NSDictionary *)prefectureInfo
+#pragma mark - Display Data
+/**
+ セルの表示処理
+
+ @param prefectureInfo 都道府県情報
+ @param isFavorite お気に入りフラグ
+ */
+- (void)displayPrefectureInfo:(CityDataList *)prefectureInfo
                    isFavorite:(BOOL)isFavorite
 {
-    self.titleLabel.text = prefectureInfo[TWAName];
+    self.titleLabel.text = prefectureInfo.name;
     self.favoriteButton.selected = isFavorite;
 }
 

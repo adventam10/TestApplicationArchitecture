@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CityData.h"
+
 @class PrefectureListTableViewCell;
 @protocol PrefectureListTableViewCellDelegate<NSObject>
 
@@ -25,7 +27,7 @@
 
 @property (nonatomic, weak) id<PrefectureListTableViewCellDelegate> delegate;
 
-- (void)displayPrefectureInfo:(NSDictionary *)prefectureInfo
+- (void)displayPrefectureInfo:(CityDataList *)prefectureInfo
                    isFavorite:(BOOL)isFavorite;
 
 @end

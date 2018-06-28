@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CityData.h"
 
 @interface PrefectureListModel : NSObject
 
-@property (nonatomic) NSArray <NSDictionary *> *tableDataList;
-@property (nonatomic) NSArray <NSDictionary *> *originalTableDataList;
+@property (nonatomic) NSArray <CityDataList *> *tableDataList;
+@property (nonatomic) NSArray <CityDataList *> *originalTableDataList;
 @property (nonatomic) NSMutableArray <NSNumber *> *selectedAreaTypes;
 @property (nonatomic) NSArray <NSString *> *favoriteCityIds;
 

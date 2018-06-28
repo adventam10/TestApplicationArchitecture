@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WeatherResponse.h"
+#import "CityData.h"
 
 @interface WeatherModel : NSObject
 
-@property (nonatomic) NSDictionary *responseData;
+@property (nonatomic) WeatherResponse *weatherResponse;
 
-@property (nonatomic) NSDictionary *prefectureInfo;
+@property (nonatomic) CityDataList *prefectureInfo;
 
 #pragma mark - Request
 /**
@@ -24,7 +26,7 @@
  @return タスク
  */
 - (NSURLSessionDataTask *)requestWeatherWithCityId:(NSString *)cityId
-                                           success:(void (^)(NSDictionary *jsonData))success
+                                           success:(void (^)(void))success
                                            failure:(void (^)(NSString *message, NSError *error))failure;
 
 @end

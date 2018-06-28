@@ -8,6 +8,10 @@
 
 #import "WeatherView.h"
 
+//=======================================================
+// 天気View
+//=======================================================
+
 @interface WeatherView()
 
 @property (nonatomic) NSDateFormatter *dateFormatter;
@@ -55,7 +59,7 @@
  
  @param forecasts 天気情報一覧
  */
-- (void)displayForecasts:(NSArray <NSDictionary *> *)forecasts
+- (void)displayForecasts:(NSArray <WeatherResponseForecast *> *)forecasts
 {
     [self.todayView displayForecast:nil
                         subDateText:[self.dateFormatter stringFromDate:[NSDate date]]];
@@ -63,11 +67,6 @@
                            subDateText:[self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:60*60*24]]];
     [self.dayAfterTommorowView displayForecast:nil
                                    subDateText:[self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:60*60*24*2]]];
-    
-    if ([self isCheckNull:forecasts]) {
-        
-        return;
-    }
     
     for (NSInteger i = 0; i < forecasts.count; i++) {
         
@@ -89,18 +88,6 @@
                                            subDateText:[self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSinceNow:60*60*24*2]]];
         }
     }
-}
-
-
-/**
- 対象オブジェクトがヌルか判定する
- 
- @param object 対象オブジェクト
- @return YES:ヌル、NO:ヌル以外
- */
-- (BOOL)isCheckNull:(id)object
-{
-    return [object isKindOfClass:[NSNull class]];
 }
 
 @end

@@ -8,6 +8,10 @@
 
 #import "AreaFilterModel.h"
 
+//=======================================================
+// 地方で絞込み画面用Model
+//=======================================================
+
 @implementation AreaFilterModel
 
 #pragma mark - Initialize

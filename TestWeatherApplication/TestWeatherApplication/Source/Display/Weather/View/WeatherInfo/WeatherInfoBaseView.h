@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeatherResponse.h"
 
 @interface WeatherInfoBaseView : UIView
 
@@ -24,7 +25,7 @@
  @param forecast 天気情報
  @param subDateText 日付文字列（yyyy/MM/dd(E)形式）
  */
-- (void)displayForecast:(NSDictionary *)forecast
+- (void)displayForecast:(WeatherResponseForecast *)forecast
             subDateText:(NSString *)subDateText;
 
 @end

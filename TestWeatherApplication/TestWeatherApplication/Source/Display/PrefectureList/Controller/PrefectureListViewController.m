@@ -90,9 +90,9 @@ PrefectureListViewDelegate>
     PrefectureListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName
                                                                         forIndexPath:indexPath];
     cell.delegate = self;
-    NSDictionary *prefectureInfo = self.model.tableDataList[indexPath.row];
+    CityDataList *prefectureInfo = self.model.tableDataList[indexPath.row];
     [cell displayPrefectureInfo:prefectureInfo
-                     isFavorite:[self.model isFavoriteWithCityId:prefectureInfo[TWACityId]]];
+                     isFavorite:[self.model isFavoriteWithCityId:prefectureInfo.cityId]];
     
     return cell;
 }
@@ -108,15 +108,14 @@ PrefectureListViewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [SVProgressHUD show];
-    NSDictionary *prefectureInfo = self.model.tableDataList[indexPath.row];
+    CityDataList *prefectureInfo = self.model.tableDataList[indexPath.row];
     WeatherModel *model = [WeatherModel new];
     model.prefectureInfo = prefectureInfo;
     __weak typeof(self) weakSelf = self;
-    [model requestWeatherWithCityId:prefectureInfo[TWACityId]
-                           success:^(NSDictionary *jsonData)
+    [model requestWeatherWithCityId:prefectureInfo.cityId
+                           success:^()
     {
         [SVProgressHUD dismiss];
-        model.responseData = jsonData;
         [weakSelf showWeatherViewControllerWithModel:model];
     }
                            failure:^(NSString *message, NSError *error)
@@ -152,8 +151,8 @@ PrefectureListViewDelegate>
         return;
     }
     
-    NSDictionary *prefectureInfo = self.model.tableDataList[indexPath.row];
-    [self.model changedFavoriteCityId:prefectureInfo[TWACityId]];
+    CityDataList *prefectureInfo = self.model.tableDataList[indexPath.row];
+    [self.model changedFavoriteCityId:prefectureInfo.cityId];
     [self.model setupTableDataList];
     [self.prefectureListView.tableView reloadData];
 }

@@ -8,6 +8,10 @@
 
 #import "AreaFilterView.h"
 
+//=======================================================
+// 地方で絞込みView
+//=======================================================
+
 @implementation AreaFilterView
 
 #pragma mark - Initialize
