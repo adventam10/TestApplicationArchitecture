@@ -79,40 +79,12 @@
                            failure:^(NSString *message, NSError *error)
      {
          [SVProgressHUD dismiss];
-         [weakSelf showAlertYesOnlyWithTitle:@""
-                                     message:message
-                                    yesBlock:nil];
+         [UIAlertController showSingleButtonAlertFromViewController:weakSelf
+                                                              title:@""
+                                                            message:message
+                                                        buttonTitle:@"確認"
+                                                       buttonAction:nil];
      }];
-}
-
-
-#pragma mark - Show
-/**
- 「確認」ボタンのみのアラートを表示する
- 
- @param title タイトル
- @param message メッセージ
- @param yesBlock 「確認」押した時の処理
- */
-- (void)showAlertYesOnlyWithTitle:(NSString *)title
-                          message:(NSString *)message
-                         yesBlock:(void (^)(void))yesBlock
-{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:(title)? title : @""
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"確認"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action)
-                                {
-                                    if (yesBlock) {
-                                        
-                                        yesBlock();
-                                    }
-                                }]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

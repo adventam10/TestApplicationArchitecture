@@ -15,5 +15,11 @@
 
 #import "NetworkKey.h"
 #import "CommonKey.h"
+#import "WeatherNetworkManager.h"
+
+#import "UIViewController+ShowPopover.h"
+#import "UIAlertController+ShowAlert.h"
+#import "NSUserDefaults+ReadWrite.h"
+#import "NSBundle+LoadJSONData.h"
 
 #endif /* TestWeatherApplication_PrefixHeader_pch */

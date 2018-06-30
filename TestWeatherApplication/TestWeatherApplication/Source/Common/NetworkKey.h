@@ -13,9 +13,6 @@
 // 通信関連の定数
 //=======================================================
 
-/// 天気取得のURL
-static NSString *const NWKBaseUrlString = @"http://weather.livedoor.com/forecast/webservice/json/v1";
-
 ///地域
 static NSString * const NWKLocation = @"location";
 

@@ -26,7 +26,7 @@
         
         self.isFavoriteButtonCheck = NO;
         [self setupOriginalTableDataList];
-        self.favoriteCityIds = [self userDefaultsLoadDataWithKey:TWAUserDefaultsFavorites];
+        self.favoriteCityIds = [NSUserDefaults readObjectWithKey:TWAUserDefaultsFavorites];
     }
     
     return self;
@@ -53,7 +53,7 @@
  */
 - (void)setupOriginalTableDataList
 {
-    NSDictionary *cityData = [self loadJsonFileWithFileName:@"CityData"];
+    NSDictionary *cityData = [[NSBundle mainBundle] loadJSONDataWithFileName:@"CityData"];
     CityData *data = [[CityData alloc] initWithDictionary:cityData];
     self.originalTableDataList = data.cityDataList;
 }
@@ -120,8 +120,8 @@
         [favoriteCityIds  addObject:cityId];
     }
     
-    [self userDefaultsSaveObject:favoriteCityIds key:TWAUserDefaultsFavorites];
-    self.favoriteCityIds = [self userDefaultsLoadDataWithKey:TWAUserDefaultsFavorites];
+    [NSUserDefaults writeObject:favoriteCityIds key:TWAUserDefaultsFavorites];
+    self.favoriteCityIds = [NSUserDefaults readObjectWithKey:TWAUserDefaultsFavorites];
 }
 
 
@@ -161,32 +161,10 @@
     for (NSNumber *areaTypeNum in areaTypes) {
         
         AFVAreaType areaType = [areaTypeNum integerValue];
-        switch (areaType) {
-            case AFVAreaTypeHokkaido:
-                [areaList addObject:@"北海道"];
-                break;
-            case AFVAreaTypeTohoku:
-                [areaList addObject:@"東北"];
-                break;
-            case AFVAreaTypeKanto:
-                [areaList addObject:@"関東"];
-                break;
-            case AFVAreaTypeChubu:
-                [areaList addObject:@"中部"];
-                break;
-            case AFVAreaTypeKinki:
-                [areaList addObject:@"近畿"];
-                break;
-            case AFVAreaTypeChugoku:
-                [areaList addObject:@"中国"];
-                break;
-            case AFVAreaTypeShikoku:
-                [areaList addObject:@"四国"];
-                break;
-                
-            case AFVAreaTypeKyushu:
-                [areaList addObject:@"九州"];
-                break;
+        NSString *area = [self getAreaNameFromAreaType:areaType];
+        if (area) {
+            
+            [areaList addObject:area];
         }
     }
     
@@ -201,56 +179,33 @@
 
 
 /**
- プロジェクト内のJSONファイルを読み込む。
- 
- @param fileName ファイル名（拡張子なし）
- @return JSONデータ
- */
-- (NSDictionary *)loadJsonFileWithFileName:(NSString *)fileName
-{
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
-    NSString *json = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                        options:NSJSONReadingAllowFragments error:nil];
-    return dic;
-}
+ 地方タイプからデータ絞込み用の地方文字列を取得する
 
-
-#pragma mark - UserDefaults
-/**
- 端末内にKeyを元にオブジェクトを保存します。
- 
- @param object 対象オブジェクト
- @param key 指定のキー
- @return 保存成功フラグ
+ @param areaType 地方タイプ
+ @return データ絞込み用の地方文字列
  */
-- (BOOL)userDefaultsSaveObject:(id)object
-                           key:(NSString *)key
+- (NSString *)getAreaNameFromAreaType:(AFVAreaType)areaType
 {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:data forKey:key];
-    BOOL isSucceed = [userDefaults synchronize];
-    if (!isSucceed) {
-        
+    switch (areaType) {
+        case AFVAreaTypeHokkaido:
+            return @"北海道";
+        case AFVAreaTypeTohoku:
+            return @"東北";
+        case AFVAreaTypeKanto:
+            return @"関東";
+        case AFVAreaTypeChubu:
+            return @"中部";
+        case AFVAreaTypeKinki:
+            return @"近畿";
+        case AFVAreaTypeChugoku:
+            return @"中国";
+        case AFVAreaTypeShikoku:
+            return @"四国";
+        case AFVAreaTypeKyushu:
+            return @"九州";
     }
-    return isSucceed;
-}
-
-
-/**
- 端末内に保存されたオブジェクトをKeyを元に取り出します。
- 
- @param key 指定のキー
- @return 対象オブジェクト
- */
-- (id)userDefaultsLoadDataWithKey:(NSString *)key
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *data = [userDefaults dataForKey:key];
-    id object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    return object;
+    
+    return nil;
 }
 
 @end

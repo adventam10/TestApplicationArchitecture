@@ -121,9 +121,11 @@ PrefectureListViewDelegate>
                            failure:^(NSString *message, NSError *error)
     {
         [SVProgressHUD dismiss];
-        [weakSelf showAlertYesOnlyWithTitle:@""
-                                    message:message
-                                   yesBlock:nil];
+        [UIAlertController showSingleButtonAlertFromViewController:weakSelf
+                                                             title:@""
+                                                           message:message
+                                                       buttonTitle:@"確認"
+                                                      buttonAction:nil];
     }];
 }
 
@@ -231,15 +233,12 @@ PrefectureListViewDelegate>
     vc.model = [AreaFilterModel new];
     vc.model.selectedAreaTypes = [self.model.selectedAreaTypes mutableCopy];
     vc.delegate = self;
-    vc.modalPresentationStyle = UIModalPresentationPopover;
-    vc.preferredContentSize = vc.view.frame.size;
     
-    UIPopoverPresentationController *presentationController = vc.popoverPresentationController;
-    presentationController.delegate = self;
-    presentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
-    presentationController.sourceView = button;
-    presentationController.sourceRect = button.bounds;
-    [self presentViewController:vc animated: YES completion: nil];
+    [self showPopoverViewController:vc
+                        contentSize:vc.view.frame.size
+                         sourceView:button
+                     arrowDirection:UIPopoverArrowDirectionUp
+                           delegate:self];
 }
 
 
@@ -253,35 +252,6 @@ PrefectureListViewDelegate>
     WeatherViewController *vc = [WeatherViewController new];
     vc.model = model;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-
-/**
- 「確認」ボタンのみのアラートを表示する
-
- @param title タイトル
- @param message メッセージ
- @param yesBlock 「確認」押した時の処理
- */
-- (void)showAlertYesOnlyWithTitle:(NSString *)title
-                          message:(NSString *)message
-                         yesBlock:(void (^)(void))yesBlock
-{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:(title)? title : @""
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"確認"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action)
-    {
-        if (yesBlock) {
-            
-            yesBlock();
-        }
-    }]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
